@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+no track
+
+type = 1
+panel = 1
+index  1 or 2
+
+
+-->
+<level>
+  <track>
+    
+  </track>
+  <total>1</total>
+  <note-list>
+    <note>
+      <id>0</id>
+      <time>7.0</time>
+      <track>1</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>0</index>
+    </note>
+    <note>
+      <id>1</id>
+      <time>7.8</time>
+      <track>2</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>1</index>
+    </note>
+    <note>
+      <id>2</id>
+      <time>8.9</time>
+      <track>1</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>0</index>
+    </note>
+    <note>
+      <id>3</id>
+      <time>9.1</time>
+      <track>1</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>0</index>
+    </note>
+    <note>
+      <id>4</id>
+      <time>9.6</time>
+      <track>2</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>1</index>
+    </note>
+    <note>
+      <id>5</id>
+      <time>10.4</time>
+      <track>1</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>0</index>
+    </note>
+    <note>
+      <id>6</id>
+      <time>11.1</time>
+      <track>1</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>0</index>
+    </note>
+    <note>
+      <id>7</id>
+      <time>11.3</time>
+      <track>2</track>
+      <type>1</type>
+      <panel>1</panel>
+      <index>1</index>
+    </note>
+  </note-list>
+</level>
