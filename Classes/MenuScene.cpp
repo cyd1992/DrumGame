@@ -1,5 +1,8 @@
 #include "MenuScene.h"
 
+#include "XMLParserUtil.h"
+
+#include "BandSelectScene.h"
 #include "MainGameScene.h"
 
 USING_NS_CC;
@@ -18,7 +21,7 @@ Scene* MenuScene::createScene()
 	// return the scene
 	return scene;
 }
-
+ 
 // on "init" you need to initialize your instance
 bool MenuScene::init()
 {
@@ -58,7 +61,7 @@ bool MenuScene::init()
 	//add a menu
 	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
 	auto item1 = MenuItemFont::create("DrumGameScene", CC_CALLBACK_1(MenuScene::menuCallbackMain, this));
-	auto item2 = MenuItemFont::create("---", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
+	auto item2 = MenuItemFont::create("Band Mode", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
 	auto item3 = MenuItemFont::create("---", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
 
 	auto menu = Menu::create(item1,item2,item3, nullptr);
@@ -102,7 +105,7 @@ void MenuScene::menuCallbackAudio(Ref* sender)
 
 void MenuScene::menuCallbackDisk(Ref* sender)
 {
-	//Director::getInstance()->replaceScene(DiskTestScene::createScene());
+	Director::getInstance()->replaceScene(BandSelectScene::createScene());
 }
 
 
@@ -117,5 +120,7 @@ void MenuScene::menuCloseCallback(Ref* pSender)
 
 void MenuScene::menuCallbackMain(cocos2d::Ref* sender)
 {
+	XMLParseUtil::ParseLevel("level/level_sample.xml");
+
 	Director::getInstance()->replaceScene(MainGameScene::createScene());
 }

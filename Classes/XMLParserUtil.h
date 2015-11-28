@@ -8,10 +8,15 @@
 class XMLParseUtil
 {
 public:
+	~XMLParseUtil();
+
 	static void ParseLevel(const char* file);
 
 	//static cocos2d::Vector<NoteInfo> _vec;
 	static std::vector<NoteInfo> _vec;
+	static std::string * _musicPath[10];
+	static std::string * _bgmPath;
+
 
 	static void PrintVec();
 };

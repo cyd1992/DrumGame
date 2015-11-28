@@ -9,6 +9,7 @@ public:
 	int _id;
 	float _time;
 	int _type;
+	int _auto;
 
 };
 

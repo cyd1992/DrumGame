@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+level1   资源路径为  level/level1/...
+
+bgm 标签 为 背景音乐路径 背景音乐前面应留至少3秒空白 推荐 level/level1/back.mp3
+
+track 标签中 每个 src 为 鼓的资源路径 上限为十个 ， 具体分配见分配图
+
+total 音符总数  （可以不管，随便填一个）
+
+note-list标签中存储每个音符
+
+note：
+id:    音符的序号
+time:  音符敲击的时间 值精确到0.1，不能出现百分位
+type: 鼓的类型 与track中的id相对应
+auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏中带有自动演奏的鼓，可不加自动演奏）
+
+-->
+<level>
+  <bgm>level/level1/back.mp3</bgm>
+  <track>
+    <src id="1">level/level1/beat1.mp3</src>
+    <src id="2">level/level1/beat2.mp3</src>
+    <src id="3">level/level1/beat3.mp3</src>
+    <src id="4">level/level1/beat4.mp3</src>
+    <src id="5">level/level1/beat5.mp3</src>
+    <src id="6">level/level1/beat6.mp3</src>
+  </track>
+  <total>1</total>
+  <note-list>
+    <note>
+      <id>0</id>
+      <time>3.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>1</id>
+      <time>4.2</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  </note-list>
+</level>

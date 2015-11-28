@@ -8,11 +8,26 @@ USING_NS_CC;
 //using namespace tinyxml2;
 
 std::vector<NoteInfo> XMLParseUtil::_vec;
+std::string * XMLParseUtil::_musicPath[10] = { new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string() };
+std::string * XMLParseUtil::_bgmPath = new std::string();
+
+
+XMLParseUtil::~XMLParseUtil()
+{
+	delete _bgmPath;
+	delete[] _musicPath;
+}
 
 void XMLParseUtil::ParseLevel(const char* file)
 {
 // 	const char* file_path = FileUtils::getInstance()->fullPathForFilename("test.xml").c_str();
 // 	log("external file path: %s", file_path);
+	
+
+	//first clear vec
+	_vec.clear();
+
+
 	//create XMLDocument
 	tinyxml2::XMLDocument* myDocument = new tinyxml2::XMLDocument();
 	myDocument->LoadFile(file);
@@ -20,10 +35,29 @@ void XMLParseUtil::ParseLevel(const char* file)
 	//get root node  level
 	tinyxml2::XMLElement* rootElement = myDocument->RootElement();
 
+	//get bgm node
+	tinyxml2::XMLElement* bgmElement = rootElement->FirstChildElement();
+
+	delete _bgmPath;
+	_bgmPath = new std::string(bgmElement->GetText());
+
 	//log("%s", rootElement->GetText());
 
 	//   track
-	tinyxml2::XMLElement* trackElement = rootElement->FirstChildElement();
+	tinyxml2::XMLElement* trackElement = bgmElement->NextSiblingElement();
+
+		tinyxml2::XMLElement* element = trackElement->FirstChildElement();
+		int i = 0;
+		while (element)
+		{
+			log("message: %s", element->GetText());
+
+			delete _musicPath[i];
+			_musicPath[i] = new std::string(element->GetText());
+			i++;
+
+			element = element->NextSiblingElement();
+		}
 
 //	while (trackElement)
 //	{
@@ -73,7 +107,12 @@ void XMLParseUtil::ParseLevel(const char* file)
 			{
 				note._type = atoi(element->GetText());
 				log("type = %d", note._type);
-			}			
+			}	
+			else if (strcmp(element->Value(), "auto") == 0)
+			{
+				note._auto = atoi(element->GetText());
+				log("type = %d", note._auto);
+			}
 			element = element->NextSiblingElement();
 		}
 		_vec.push_back(note);
@@ -89,9 +128,16 @@ void XMLParseUtil::ParseLevel(const char* file)
 void XMLParseUtil::PrintVec()
 {
 	log("size: %d", _vec.size());
+
+	//print musicPath
+	for (int i = 0; i < 6; i++)
+	{
+		log("src%d : %s",i, _musicPath[i]->c_str());
+	}
+
 	for (auto& e : _vec)
 	{
-// 		log("id:%d  time:%f  track:%d", e._id,e._time,e._track);
+ 		log("id:%d  time:%f ", e._id,e._time);
 // 		log("panel:%d  type:%d  index:%d", e._panel, e._type, e._index);
 	}
 
