@@ -5,6 +5,8 @@
 #include "BandSelectScene.h"
 #include "MainGameScene.h"
 
+#include "WelcomeScene.h"
+
 USING_NS_CC;
 
 Scene* MenuScene::createScene()
@@ -62,7 +64,7 @@ bool MenuScene::init()
 	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
 	auto item1 = MenuItemFont::create("DrumGameScene", CC_CALLBACK_1(MenuScene::menuCallbackMain, this));
 	auto item2 = MenuItemFont::create("Band Mode", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
-	auto item3 = MenuItemFont::create("---", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
+	auto item3 = MenuItemFont::create("WelcomeScene", CC_CALLBACK_1(MenuScene::menuCallbackAudio, this));
 
 	auto menu = Menu::create(item1,item2,item3, nullptr);
 	menu->alignItemsVertically();
@@ -100,7 +102,7 @@ void MenuScene::menuCallback(Ref* sender)
 
 void MenuScene::menuCallbackAudio(Ref* sender)
 {
-	//Director::getInstance()->replaceScene(AudioTestScene::createScene());
+	Director::getInstance()->replaceScene(WelcomeScene::createScene());
 }
 
 void MenuScene::menuCallbackDisk(Ref* sender)

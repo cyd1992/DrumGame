@@ -1,5 +1,7 @@
 #include "DrumSprite.h"
 
+#include "MainGameScene.h"
+
 USING_NS_CC;
 using namespace cocos2d::experimental;
 
@@ -69,6 +71,21 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 			// 				log("--");
 			// 			}
 			//}
+
+
+			Size visibleSize = Director::getInstance()->getVisibleSize();
+			//score
+			auto scene = (MainGameScene*)(this->getParent());
+			auto note = scene->getChildByTag(scene->_curTag);
+			float dist = note->getPositionX() - visibleSize.width * 0.1;
+			if (dist < 0) dist =  dist * -1;
+			if (dist <= 30)
+			{
+				scene->_score += 100;
+				char t[100];
+				sprintf(t, "%d", scene->_score);
+				scene->_scoreLabel->setString(t);
+			}
 
 			return true;
 		}

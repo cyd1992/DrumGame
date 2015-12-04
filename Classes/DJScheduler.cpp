@@ -6,12 +6,13 @@
 
 USING_NS_CC;
 //float DJScheduler::_time = -3.0f;
-int DJScheduler::_id = 0;
+//int DJScheduler::_id = 0;
 
 
 void DJScheduler::callback1(float dt)
 {
-	
+
+
 	if(_id<XMLParseUtil::_vec.size())
 	_note = (NoteInfo)XMLParseUtil::_vec.at(_id);
 
@@ -32,15 +33,18 @@ void DJScheduler::callback1(float dt)
 // 			if(_note._index == 0) noteSprite->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
 // 			else if(_note._index == 1) noteSprite->setPosition(visibleSize.width *0.3, visibleSize.height *1.2);
 
-			noteSprite->setPosition(visibleSize.width *1.1, visibleSize.height * 0.9);
+			noteSprite->setPosition(visibleSize.width *1.20, visibleSize.height * 0.9);
 			if (_note._type == 1) noteSprite->setScale(0.5);
 
-			noteSprite->setOpacity(100);
+			//noteSprite->setOpacity(100);
 			//panel->addChild(noteSprite);
+			noteSprite->setTag(100 + _id);
 			this->getParent()->addChild(noteSprite, 20);
 			noteSprite->StartDrop();
 
 			_id++;
+
+
 		}
 
 		_time += dt;

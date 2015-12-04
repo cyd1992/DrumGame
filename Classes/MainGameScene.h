@@ -17,6 +17,11 @@ public:
 	// implement the "static create()" method manually
 	CREATE_FUNC(MainGameScene);
 
+	cocos2d::LabelTTF* _scoreLabel;
+	int _score = 0;
+	int _curTag = 100;
+	int _combo = 0;
+
 	int _backId;
 	cocos2d::experimental::AudioProfile _audioProfile;
 

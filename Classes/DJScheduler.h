@@ -8,7 +8,7 @@ class DJScheduler : public cocos2d::Node
 {
 public:
 	static DJScheduler* create();
-	static int _id;
+	int _id = 0;
 	NoteInfo _note;
 
 	float _time = 0.0f;

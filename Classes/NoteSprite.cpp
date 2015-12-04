@@ -1,5 +1,6 @@
 #include "NoteSprite.h"
 
+#include "MainGameScene.h"
 USING_NS_CC;
 
 NoteSprite* NoteSprite::create(const std::string& filename)
@@ -27,7 +28,8 @@ void NoteSprite::StartDrop()
 	auto callfunc1 = CallFunc::create([this]() {
 		//log("remove!");
 		//this->removeFromParentAndCleanup(true);
-
+		auto scene = (MainGameScene*)(this->getParent());
+		scene->_curTag = this->getTag();
 		//if auto   play music
 
 	});

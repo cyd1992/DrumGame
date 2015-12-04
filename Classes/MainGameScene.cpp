@@ -57,11 +57,19 @@ bool MainGameScene::init()
 
 	////////////////////////////
 	//drum
-	auto drum = Sprite::create("drum2.png");
+	auto drum = Sprite::create("drum5.png");
 	//drum->ignoreAnchorPointForPosition(true);
-	drum->setPosition(visibleSize.width/2, visibleSize.height *0.45);
+	drum->setPosition(visibleSize.width/2, visibleSize.height /2);
 	drum->setScale(0.5);
 	addChild(drum, 10);
+
+
+	//panel
+	auto panel = Sprite::create("panel.png");
+	//drum->ignoreAnchorPointForPosition(true);
+	panel->setPosition(visibleSize.width / 2, visibleSize.height* 0.48);
+	panel->setScale(0.5);
+	addChild(panel, 11);
 
 
 	//audio profile
@@ -133,9 +141,9 @@ bool MainGameScene::init()
 
 	//top panel
 	auto panelDrum = Sprite::create("CyanSquare.png");
-	panelDrum->setPosition(visibleSize.width * 0.1, visibleSize.height * 0.9);
+	panelDrum->setPosition(visibleSize.width * 0.08, visibleSize.height * 0.9);
 	panelDrum->setScale(0.8);
-	addChild(panelDrum, 10);
+	addChild(panelDrum, 20);
 
 
 	
@@ -157,6 +165,16 @@ bool MainGameScene::init()
 
 	sche->StartTimer();
 
+	// score label
+	char stringLabel[100];
+	sprintf(stringLabel, "%d", _score);
+
+	_scoreLabel = LabelTTF::create();
+	_scoreLabel->setFontName("Marker Felt");
+	_scoreLabel->setFontSize(48);
+	_scoreLabel->setString(stringLabel);
+	addChild(_scoreLabel,20);
+	_scoreLabel->setPosition(Vec2(visibleSize.width *0.9, visibleSize.height * 0.9));
 
 	return true;
 }

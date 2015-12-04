@@ -22,11 +22,12 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
     <src id="2">music/beat2.mp3</src>
     <src id="3">music/beat3.mp3</src>
     <src id="4">music/beat4.mp3</src>
-    <src id="5">music/beat1.mp3</src>
-    <src id="6">music/beat1.mp3</src>
+    <src id="5">music/beat5.mp3</src>
+    <src id="6">music/beat6.mp3</src>
   </track>
   <total>1</total>
   <note-list>
+    <!-- 第一小节 -->
     <note>
       <id>0</id>
       <time>3.4</time>
@@ -53,10 +54,12 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
     </note>
     <note>
       <id>4</id>
-      <time>5.8</time>
+      <time>6.0</time>
       <type>1</type>
       <auto>0</auto>
     </note>
+    
+    <!--第二小节-->
   <note>
       <id>5</id>
       <time>6.8</time>
@@ -71,13 +74,345 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
     </note>
   <note>
       <id>7</id>
-      <time>7.9</time>
-      <type>1</type>
+      <time>8.0</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
   <note>
       <id>8</id>
       <time>8.4</time>
+      <type>4</type>
+      <auto>0</auto>
+   </note>
+   <note>
+    <id>9</id>
+    <time>9.2</time>
+    <type>1</type>
+    <auto>0</auto>
+   </note>
+    
+    <!-- 第三小节  -->
+  <note>
+    <id>10</id>
+    <time>10.0</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>11</id>
+    <time>10.8</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>12</id>
+    <time>11.2</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note> 
+  <note>
+    <id>13</id>
+    <time>11.6</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>14</id>
+    <time>12.0</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note>
+    
+  <!-- 第四小节 -->  
+  <note>
+    <id>15</id>
+    <time>12.8</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>16</id>
+    <time>13.6</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>17</id>
+    <time>14.0</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>18</id>
+    <time>14.4</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>19</id>
+    <time>15.2</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>20</id>
+    <time>15.6</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note>
+    
+   <!--第五小节-->
+  <note>
+    <id>21</id>
+    <time>16.0</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>22</id>
+    <time>16.8</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note> 
+  <note>
+    <id>23</id>
+    <time>17.2</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>24</id>
+    <time>17.6</time>
+    <type>4</type>
+    <auto>0</auto>
+  </note>
+  <note>
+    <id>25</id>
+    <time>18.4</time>
+    <type>1</type>
+    <auto>0</auto>
+  </note>
+    
+   <!-- 第六小节-->
+    <note>
+      <id>26</id>
+      <time>19.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>27</id>
+      <time>20.0</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>28</id>
+      <time>20.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>29</id>
+      <time>20.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>30</id>
+      <time>21.6</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    
+    <!-- 第七小节 -->
+    <note>
+      <id>31</id>
+      <time>22.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>32</id>
+      <time>23.2</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>33</id>
+      <time>23.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>34</id>
+      <time>24.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>35</id>
+      <time>24.8</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    
+    <!-- 第八小节 -->
+    <note>
+      <id>36</id>
+      <time>25.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>37</id>
+      <time>26.4</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>38</id>
+      <time>26.8</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>39</id>
+      <time>27.0</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>40</id>
+      <time>27.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    
+  <!--第九小节-->
+   <note>
+      <id>41</id>
+      <time>28.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>42</id>
+      <time>29.6</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>43</id>
+      <time>30.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>44</id>
+      <time>30.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>45</id>
+      <time>31.2</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note> 
+    
+  <!--第十小节-->
+   <note>
+      <id>46</id>
+      <time>32.0</time>
+      <type>4</type>
+      <auto>0</auto>
+   </note>
+    <note>
+      <id>47</id>
+      <time>32.8</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>48</id>
+      <time>33.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>49</id>
+      <time>33.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>50</id>
+      <time>34.6</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    
+  <!--第十一小节-->
+  <note>
+      <id>51</id>
+      <time>35.4</time>
+      <type>4</type>
+      <auto>0</auto>
+   </note>
+    <note>
+      <id>52</id>
+      <time>36.2</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>53</id>
+      <time>36.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>54</id>
+      <time>37.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>55</id>
+      <time>37.8</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    
+  <!--第十二小节-->
+    <note>
+      <id>56</id>
+      <time>38.6</time>
+      <type>4</type>
+      <auto>0</auto>
+   </note>
+    <note>
+      <id>57</id>
+      <time>39.4</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>58</id>
+      <time>39.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>59</id>
+      <time>40.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>60</id>
+      <time>41.0</time>
       <type>1</type>
       <auto>0</auto>
     </note>
