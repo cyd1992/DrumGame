@@ -4,6 +4,8 @@
 #include "cocos2d.h"
 #include "audio/include/AudioEngine.h"
 
+#include "ComboNode.h"
+
 class MainGameScene : public cocos2d::Layer
 {
 public:
@@ -25,7 +27,7 @@ public:
 	int _backId;
 	cocos2d::experimental::AudioProfile _audioProfile;
 
-
+	ComboNode* _comboNode;
 
 };
 

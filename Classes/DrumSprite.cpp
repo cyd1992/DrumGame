@@ -2,6 +2,8 @@
 
 #include "MainGameScene.h"
 
+
+
 USING_NS_CC;
 using namespace cocos2d::experimental;
 
@@ -58,7 +60,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 		{
 			//auto temp =  static_cast<AudioTestScene*>(target->getParent());
 
-			log("sprite began... x = %f, y = %f", locationInNode.x, locationInNode.y);
+			//log("sprite began... x = %f, y = %f", locationInNode.x, locationInNode.y);
 			//target->setOpacity(180);
 
 
@@ -77,14 +79,33 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 			//score
 			auto scene = (MainGameScene*)(this->getParent());
 			auto note = scene->getChildByTag(scene->_curTag);
-			float dist = note->getPositionX() - visibleSize.width * 0.1;
+			float dist = note->getPositionX() - visibleSize.width * 0.15;
+
 			if (dist < 0) dist =  dist * -1;
-			if (dist <= 30)
+			log("dist: %f", dist);
+			if (dist <= 50)
 			{
+				scene->_combo++;
+
 				scene->_score += 100;
 				char t[100];
 				sprintf(t, "%d", scene->_score);
-				scene->_scoreLabel->setString(t);
+				scene->_scoreLabel->setString(t);	
+
+
+				char t2[10];
+				sprintf(t2, "combo x%d", scene->_combo);
+				scene->_comboNode->stopAllActions();
+				scene->_comboNode->_label->setOpacity(0);
+				scene->_comboNode->_label->setString(t2);
+
+				scene->_comboNode->RunAction();
+				
+				
+			}
+			else
+			{
+				scene->_combo = 0;
 			}
 
 			return true;

@@ -24,7 +24,7 @@ void NoteSprite::StartDrop()
 // 	auto move1 = MoveBy::create(1.5, Vec2(0, -1 * visibleSize.height));
 // 	auto move2 = MoveBy::create(0.5, Vec2(0, -1 * visibleSize.height / 3));
 
-	auto move1 = MoveBy::create(3, Vec2(-1 * visibleSize.width, 0));
+	auto move1 = MoveBy::create(3, Vec2(-1.1 * visibleSize.width, 0));
 	auto callfunc1 = CallFunc::create([this]() {
 		//log("remove!");
 		//this->removeFromParentAndCleanup(true);

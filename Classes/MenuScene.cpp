@@ -1,11 +1,15 @@
 #include "MenuScene.h"
 
-#include "XMLParserUtil.h"
+#include "XMLParseUtil.h"
 
 #include "BandSelectScene.h"
 #include "MainGameScene.h"
 
 #include "WelcomeScene.h"
+
+#include "NoteNode.h"
+
+#include "ComboNode.h"
 
 USING_NS_CC;
 
@@ -66,31 +70,37 @@ bool MenuScene::init()
 	auto item2 = MenuItemFont::create("Band Mode", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
 	auto item3 = MenuItemFont::create("WelcomeScene", CC_CALLBACK_1(MenuScene::menuCallbackAudio, this));
 
+	item1->setScale(2);
+	item2->setScale(2);
+	item3->setScale(2);
+
 	auto menu = Menu::create(item1,item2,item3, nullptr);
 	menu->alignItemsVertically();
+	
 
 	addChild(menu);
 	menu->setPosition(Vec2(s.width / 2, s.height / 2));
-	// add a label shows "Hello World"
-	// create and initialize a label
 
-// 	auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-// 
-// 	// position the label on the center of the screen
-// 	label->setPosition(Vec2(origin.x + visibleSize.width / 2,
-// 		origin.y + visibleSize.height - label->getContentSize().height));
-// 
-// 	// add the label as a child to this layer
-// 	this->addChild(label, 1);
-// 
-// 	// add "HelloWorld" splash screen"
-// 	auto sprite = Sprite::create("HelloWorld.png");
-// 
-// 	// position the sprite on the center of the screen
-// 	sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-// 
-// 	// add the sprite as a child to this layer
-// 	this->addChild(sprite, 0);
+// note node test
+	auto note = NoteNode::create(10);
+	note->setPosition(visibleSize.width * 0, visibleSize.height*0.2);
+	addChild(note);
+
+//draw test
+// 	auto draw = DrawNode::create();
+// 	addChild(draw, 10);
+
+// draw a line
+	/*draw->drawLine(Vec2(0, 0), Vec2(s.width, s.height), Color4F(1.0, 0.0, 0.0, 0.5));*/
+
+	//combo test
+	auto combo = ComboNode::create(10);
+	combo->setPosition(visibleSize.width * 0.2, visibleSize.height * 0.8);
+
+	addChild(combo);
+
+	//log test
+	log("log test!");
 
 	return true;
 }
@@ -122,7 +132,11 @@ void MenuScene::menuCloseCallback(Ref* pSender)
 
 void MenuScene::menuCallbackMain(cocos2d::Ref* sender)
 {
-	XMLParseUtil::ParseLevel("level/level_sample.xml");
+	log("trace1");
 
+	XMLParseUtil::ParseLevel("level/level_sample_1.xml");
+
+
+	log("trace2");
 	Director::getInstance()->replaceScene(MainGameScene::createScene());
 }

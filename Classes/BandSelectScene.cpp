@@ -2,7 +2,7 @@
 
 #include "MainGameScene.h"
 
-#include "XMLParserUtil.h"
+#include "XMLParseUtil.h"
 #include "MenuScene.h"
 #include "MainGameScene.h"
 
@@ -50,23 +50,23 @@ bool BandSelectScene::init()
 	this->addChild(menuBack, 100);
 
 	//add a menu
-// 	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
-// 	auto item1 = MenuItemFont::create("Level1", CC_CALLBACK_1(BandSelectScene::menuCallbackLevel1, this));
-// 	auto item2 = MenuItemFont::create("Level2", CC_CALLBACK_1(BandSelectScene::menuCallbackLevel2, this));
-// 	auto item3 = MenuItemFont::create("Level3", CC_CALLBACK_1(BandSelectScene::menuCallbackLevel3, this));
-// 
-// 	auto menu = Menu::create(item1, item2, item3, nullptr);
-// 	menu->alignItemsVertically();
-// 
-// 	addChild(menu);
-// 	menu->setPosition(Vec2(s.width / 2, s.height / 2));
+	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
+	auto item1 = MenuItemFont::create("Level1", CC_CALLBACK_1(BandSelectScene::menuCallbackLevel1, this));
+	auto item2 = MenuItemFont::create("Level2", CC_CALLBACK_1(BandSelectScene::menuCallbackLevel2, this));
+	auto item3 = MenuItemFont::create("Level3", CC_CALLBACK_1(BandSelectScene::menuCallbackLevel3, this));
+
+	auto menu = Menu::create(item1, item2, item3, nullptr);
+	menu->alignItemsVertically();
+
+	addChild(menu);
+	menu->setPosition(Vec2(s.width / 2, s.height / 2));
 
 	//load backgroud
-	auto background = Sprite::create("band.png");
-	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	background->setScale(0.5);
-
-	addChild(background, 10);
+// 	auto background = Sprite::create("band.png");
+// 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+// 	background->setScale(0.5);
+// 
+// 	addChild(background, 10);
 
 	return true;
 }

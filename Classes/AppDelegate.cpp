@@ -58,11 +58,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
 	//for windows debug////////////////////
-	glview->setFrameSize(1920 / 2, 1080 / 2);
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+	glview->setFrameSize(1920 , 1080 );
+#endif
 	///////////////////////////////////////
 
     // Set the design resolution
-    glview->setDesignResolutionSize(currentResolutionSize.width/2, currentResolutionSize.height/2, ResolutionPolicy::NO_BORDER);
+    glview->setDesignResolutionSize(currentResolutionSize.width, currentResolutionSize.height, ResolutionPolicy::NO_BORDER);
     Size frameSize = glview->getFrameSize();
 
 

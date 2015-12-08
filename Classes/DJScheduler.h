@@ -17,6 +17,8 @@ public:
 
 	void callback1(float dt);
 
+	float abs(float f);
+
 };
 
 

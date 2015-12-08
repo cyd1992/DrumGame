@@ -1,8 +1,10 @@
 #include "DJScheduler.h"
-#include "XMLParserUtil.h"
+#include "XMLParseUtil.h"
 #include "NoteInfo.h"
 
 #include "NoteSprite.h"
+#include "NoteNode.h"
+#include <math.h>
 
 USING_NS_CC;
 //float DJScheduler::_time = -3.0f;
@@ -19,7 +21,7 @@ void DJScheduler::callback1(float dt)
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
 	//CCLOG("time: %f",_time);
-	if (_time < 60.0f)
+	if (_time < 300.0f)
 	{
 		float note_time = _note._time;
 		float pre_time = _time + 3;
@@ -29,12 +31,14 @@ void DJScheduler::callback1(float dt)
 			//Layer* panel = (Layer*)(this->getParent());
 
 			//note test
-			auto noteSprite = NoteSprite::create("note.png");
+			auto noteSprite = NoteNode::create(_id);
+
 // 			if(_note._index == 0) noteSprite->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
 // 			else if(_note._index == 1) noteSprite->setPosition(visibleSize.width *0.3, visibleSize.height *1.2);
 
 			noteSprite->setPosition(visibleSize.width *1.20, visibleSize.height * 0.9);
-			if (_note._type == 1) noteSprite->setScale(0.5);
+			noteSprite->setScale(2);
+			if (_note._type == 1) noteSprite->setScale(1);
 
 			//noteSprite->setOpacity(100);
 			//panel->addChild(noteSprite);
@@ -71,5 +75,9 @@ DJScheduler* DJScheduler::create()
 	return ret;
 }
 
+float DJScheduler::abs(float f)
+{
+	return f > 0 ? f : (-1.0*f);
+}
 
 

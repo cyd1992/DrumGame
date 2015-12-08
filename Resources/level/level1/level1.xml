@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-level1   资源路径为  level/level1/...
-
-bgm 标签 为 背景音乐路径 背景音乐前面应留至少3秒空白 推荐 level/level1/back.mp3
+bgm 标签 为 背景音乐路径  背景音乐前面应留至少3秒空白
 
 track 标签中 每个 src 为 鼓的资源路径 上限为十个 ， 具体分配见分配图
 
@@ -18,7 +16,7 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
 
 -->
 <level>
-  <bgm>level/level1/back.mp3</bgm>
+  <bgm>level/level1/r_d.mp3</bgm>
   <track>
     <src id="1">music/beat1.mp3</src>
     <src id="2">music/beat2.mp3</src>
@@ -31,1995 +29,1445 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
   <note-list>
     <note>
       <id>0</id>
-      <time>3.2</time>
-      <type>2</type>
+      <time>25.8</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
     <note>
       <id>1</id>
-      <time>3.3</time>
+      <time>26.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
     <note>
       <id>2</id>
-      <time>3.4</time>
-      <type>2</type>
+      <time>27.0</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
     <note>
       <id>3</id>
-      <time>3.5</time>
+      <time>27.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
     <note>
       <id>4</id>
-      <time>3.7</time>
-      <type>2</type>
+      <time>28.2</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>5</id>
-      <time>3.8</time>
+      <time>28.8</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>6</id>
-      <time>3.9</time>
-      <type>2</type>
+      <time>29.4</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>7</id>
-      <time>4.0</time>
+      <time>30.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>8</id>
-      <time>5.5</time>
-      <type>2</type>
+      <time>30.6</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-   <note>
+    <note>
       <id>9</id>
-      <time>6.0</time>
+      <time>31.2</time>
       <type>4</type>
       <auto>0</auto>
-    </note> 
-  <note>
+    </note>
+    <note>
       <id>10</id>
-      <time>6.5</time>
-      <type>2</type>
+      <time>31.8</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>11</id>
-      <time>7.0</time>
+      <time>32.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>12</id>
-      <time>7.5</time>
-      <type>3</type>
+      <time>33.0</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>13</id>
-      <time>8.0</time>
+      <time>33.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>14</id>
-      <time>8.5</time>
-      <type>6</type>
+      <time>34.2</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>15</id>
-      <time>9.0</time>
+      <time>34.8</time>
       <type>4</type>
       <auto>0</auto>
-    </note>	
-  <note>
+    </note>
+    <note>
       <id>16</id>
-      <time>9.5</time>
-      <type>6</type>
+      <time>35.4</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>17</id>
-      <time>10.0</time>
+      <time>36.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>18</id>
-      <time>10.5</time>
-      <type>6</type>
+      <time>36.6</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>19</id>
-      <time>11.0</time>
+      <time>37.2</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>20</id>
-      <time>11.5</time>
-      <type>6</type>
+      <time>37.8</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>21</id>
-      <time>12.0</time>
+      <time>38.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>22</id>
-      <time>12.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>23</id>
-      <time>13.0</time>
+      <time>39.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>24</id>
-      <time>13.5</time>
-      <type>6</type>
+    <note>
+      <id>23</id>
+      <time>39.6</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
+      <id>24</id>
+      <time>40.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
       <id>25</id>
-      <time>15.0</time>
+      <time>40.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>26</id>
+      <time>41.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>27</id>
+      <time>42.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>28</id>
+      <time>42.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>29</id>
+      <time>43.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>30</id>
+      <time>43.8</time>
       <type>3</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>26</id>
-      <time>15.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>27</id>
-      <time>16.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>28</id>
-      <time>16.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>29</id>
-      <time>17.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>30</id>
-      <time>17.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
+    <note>
       <id>31</id>
-      <time>18.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>32</id>
-      <time>18.5</time>
+      <time>44.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
+      <id>32</id>
+      <time>45.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
       <id>33</id>
-      <time>19.0</time>
-      <type>2</type>
+      <time>45.6</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
   <note>
       <id>34</id>
-      <time>19.5</time>
+      <time>46.2</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
       <id>35</id>
-      <time>20.0</time>
-      <type>2</type>
+      <time>46.8</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
   <note>
       <id>36</id>
-      <time>20.5</time>
+      <time>47.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
       <id>37</id>
-      <time>21.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>38</id>
-      <time>21.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>39</id>
-      <time>22.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>40</id>
-      <time>22.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>41</id>
-      <time>23.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>42</id>
-      <time>23.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>43</id>
-      <time>24.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>44</id>
-      <time>24.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>45</id>
-      <time>25.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>46</id>
-      <time>25.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>47</id>
-      <time>26.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>48</id>
-      <time>26.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>49</id>
-      <time>27.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>50</id>
-      <time>27.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>51</id>
-      <time>28.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>52</id>
-      <time>28.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>53</id>
-      <time>29.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>54</id>
-      <time>29.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>55</id>
-      <time>30.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>56</id>
-      <time>30.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>57</id>
-      <time>31.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>58</id>
-      <time>31.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>59</id>
-      <time>32.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>60</id>
-      <time>32.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>61</id>
-      <time>33.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>62</id>
-      <time>33.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>63</id>
-      <time>34.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>64</id>
-      <time>34.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>65</id>
-      <time>35.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>66</id>
-      <time>35.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>67</id>
-      <time>36.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>68</id>
-      <time>36.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>69</id>
-      <time>37.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>70</id>
-      <time>37.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>71</id>
-      <time>38.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>72</id>
-      <time>38.5</time>
-      <type>3</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>73</id>
-      <time>39.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>74</id>
-      <time>39.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>75</id>
-      <time>40.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>76</id>
-      <time>40.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>77</id>
-      <time>41.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>78</id>
-      <time>41.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>79</id>
-      <time>42.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>80</id>
-      <time>42.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>81</id>
-      <time>43.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>82</id>
-      <time>43.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>83</id>
-      <time>44.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>84</id>
-      <time>44.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>85</id>
-      <time>45</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>86</id>
-      <time>45.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>87</id>
-      <time>46.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>88</id>
-      <time>46.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>89</id>
-      <time>47.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>90</id>
-      <time>47.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>91</id>
       <time>48.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>92</id>
-      <time>48.5</time>
+      <id>38</id>
+      <time>48.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>93</id>
-      <time>49.0</time>
+      <id>39</id>
+      <time>49.2</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>94</id>
-      <time>49.5</time>
+      <id>40</id>
+      <time>49.8</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>95</id>
-      <time>50.0</time>
+      <id>41</id>
+      <time>50.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>96</id>
-      <time>50.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>97</id>
+      <id>42</id>
       <time>51.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>98</id>
-      <time>51.5</time>
+      <id>43</id>
+      <time>51.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>99</id>
-      <time>52.0</time>
+      <id>44</id>
+      <time>52.2</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>100</id>
-      <time>52.5</time>
+      <id>45</id>
+      <time>52.8</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>101</id>
-      <time>53.0</time>
-      <type>4</type>
+      <id>46</id>
+      <time>53.4</time>
+      <type>3</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>102</id>
-      <time>53.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>103</id>
+      <id>47</id>
       <time>54.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>104</id>
-      <time>54.5</time>
+      <id>48</id>
+      <time>54.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>105</id>
-      <time>55.0</time>
+      <id>49</id>
+      <time>55.2</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>106</id>
-      <time>55.5</time>
+      <id>50</id>
+      <time>55.8</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>107</id>
-      <time>56.0</time>
+      <id>51</id>
+      <time>56.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>108</id>
-      <time>56.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>109</id>
+      <id>52</id>
       <time>57.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>110</id>
-      <time>61.0</time>
-      <type>1</type>
+      <id>53</id>
+      <time>57.6</time>
+      <type>3</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>111</id>
-      <time>62.0</time>
-      <type>5</type>
+      <id>54</id>
+      <time>58.2</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>112</id>
+      <id>55</id>
+      <time>58.8</time>
+      <type>3</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>56</id>
+      <time>59.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>57</id>
+      <time>60.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>58</id>
+      <time>60.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>59</id>
+      <time>61.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>60</id>
+      <time>61.9</time>
+      <type>3</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>61</id>
+      <time>62.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>62</id>
+      <time>62.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>63</id>
+      <time>62.5</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <!-- 加快 -->
+  <note>
+      <id>64</id>
       <time>63.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>113</id>
-      <time>64.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>114</id>
-      <time>65.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>115</id>
-      <time>66.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>116</id>
-      <time>67.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>117</id>
-      <time>68.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>118</id>
-      <time>69.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>119</id>
-      <time>70.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>120</id>
-      <time>71.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>121</id>
-      <time>72.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>122</id>
-      <time>73.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>123</id>
-      <time>74.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>124</id>
-      <time>75.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>125</id>
-      <time>76.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>126</id>
-      <time>78.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>127</id>
-      <time>79.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>128</id>
-      <time>79.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>129</id>
-      <time>80.0</time>
       <type>2</type>
       <auto>0</auto>
     </note>
   <note>
-      <id>130</id>
+      <id>65</id>
+      <time>63.3</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>66</id>
+      <time>63.6</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>67</id>
+      <time>63.9</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>68</id>
+      <time>64.2</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>69</id>
+      <time>64.5</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>70</id>
+      <time>64.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>71</id>
+      <time>65.1</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>72</id>
+      <time>65.4</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>73</id>
+      <time>65.7</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>74</id>
+      <time>66.0</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>75</id>
+      <time>66.3</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>76</id>
+      <time>66.6</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>77</id>
+      <time>66.9</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>78</id>
+      <time>67.2</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>79</id>
+      <time>67.5</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>80</id>
+      <time>67.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>81</id>
+      <time>68.1</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>82</id>
+      <time>68.4</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>83</id>
+      <time>68.7</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>84</id>
+      <time>69.0</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>85</id>
+      <time>69.3</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>86</id>
+      <time>69.6</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+  <note>
+      <id>87</id>
+      <time>69.9</time>
+      <type>5</type>
+      <auto>0</auto>
+   </note>
+    <note>
+      <id>88</id>
+      <time>70.2</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>89</id>
+      <time>70.5</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>90</id>
+      <time>70.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>91</id>
+      <time>71.1</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>92</id>
+      <time>71.4</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>93</id>
+      <time>71.7</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>94</id>
+      <time>72.0</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>95</id>
+      <time>72.3</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>96</id>
+      <time>72.6</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>97</id>
+      <time>72.9</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>98</id>
+      <time>73.2</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>99</id>
+      <time>73.5</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>100</id>
+      <time>73.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>101</id>
+      <time>74.1</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>102</id>
+      <time>74.4</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>103</id>
+      <time>74.7</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>104</id>
+      <time>75.0</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>105</id>
+      <time>75.3</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>106</id>
+      <time>75.6</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>107</id>
+      <time>75.9</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>108</id>
+      <time>76.2</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>109</id>
+      <time>76.5</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>110</id>
+      <time>76.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>111</id>
+      <time>77.1</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>112</id>
+      <time>77.4</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>113</id>
+      <time>77.7</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>114</id>
+      <time>78.0</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>115</id>
+      <time>78.3</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>116</id>
+      <time>78.6</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>117</id>
+      <time>78.9</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>118</id>
+      <time>79.2</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>119</id>
+      <time>79.5</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>120</id>
+      <time>79.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>121</id>
+      <time>80.1</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>122</id>
+      <time>80.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>123</id>
+      <time>80.3</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>124</id>
       <time>80.5</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>131</id>
-      <time>81.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>132</id>
-      <time>81.5</time>
+    <note>
+      <id>125</id>
+      <time>80.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>133</id>
-      <time>82.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>134</id>
-      <time>82.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>135</id>
-      <time>83.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>136</id>
-      <time>83.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>137</id>
-      <time>84.0</time>
+    <note>
+      <id>126</id>
+      <time>80.8</time>
       <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>138</id>
-      <time>84.5</time>
-      <type>4</type>
+    <note>
+      <id>127</id>
+      <time>81.3</time>
+      <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>139</id>
+    <note>
+      <id>128</id>
+      <time>81.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>129</id>
+      <time>82.3</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>130</id>
+      <time>82.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>131</id>
+      <time>83.3</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>132</id>
+      <time>83.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>133</id>
+      <time>84.3</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>134</id>
+      <time>84.8</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>135</id>
       <time>85.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>140</id>
-      <time>85.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>141</id>
-      <time>86.0</time>
       <type>3</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>142</id>
-      <time>86.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>143</id>
-      <time>87.0</time>
+    <note>
+      <id>136</id>
+      <time>85.3</time>
       <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>144</id>
-      <time>87.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>145</id>
-      <time>88.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>146</id>
-      <time>88.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>147</id>
-      <time>89.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>148</id>
-      <time>89.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>149</id>
-      <time>90.0</time>
+    <note>
+      <id>137</id>
+      <time>85.8</time>
       <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>150</id>
+    <note>
+      <id>138</id>
+      <time>86.3</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>139</id>
+      <time>86.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>140</id>
+      <time>87.3</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>141</id>
+      <time>87.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>142</id>
+      <time>88.3</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>143</id>
+      <time>88.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>144</id>
+      <time>89.3</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>145</id>
+      <time>89.6</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>146</id>
+      <time>89.9</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>147</id>
+      <time>90.2</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>148</id>
       <time>90.5</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
+      <id>149</id>
+      <time>90.8</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>150</id>
+      <time>91.1</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
       <id>151</id>
-      <time>91.0</time>
+      <time>91.4</time>
       <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>152</id>
-      <time>91.5</time>
+      <time>91.7</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>153</id>
       <time>92.0</time>
-      <type>5</type>
+      <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>154</id>
-      <time>92.5</time>
+      <time>92.3</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>155</id>
-      <time>93.0</time>
-      <type>1</type>
+      <time>92.6</time>
+      <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>156</id>
+      <time>92.9</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>157</id>
+      <time>93.2</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>158</id>
       <time>93.5</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>157</id>
-      <time>94.0</time>
-      <type>6</type>
+    <note>
+      <id>159</id>
+      <time>93.8</time>
+      <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>158</id>
-      <time>94.5</time>
+    <note>
+      <id>160</id>
+      <time>94.1</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>159</id>
+    <note>
+      <id>161</id>
+      <time>94.4</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>162</id>
+      <time>94.7</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>163</id>
       <time>95.0</time>
       <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>160</id>
-      <time>95.5</time>
+    <note>
+      <id>164</id>
+      <time>95.3</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>161</id>
-      <time>96.0</time>
-      <type>5</type>
+    <note>
+      <id>165</id>
+      <time>95.6</time>
+      <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>162</id>
+    <note>
+      <id>166</id>
+      <time>95.9</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>167</id>
+      <time>96.2</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>168</id>
       <time>96.5</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>163</id>
-      <time>97.0</time>
-      <type>1</type>
+    <note>
+      <id>169</id>
+      <time>96.8</time>
+      <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>164</id>
-      <time>97.5</time>
+    <note>
+      <id>170</id>
+      <time>97.1</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>165</id>
+    <note>
+      <id>171</id>
+      <time>97.4</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>172</id>
+      <time>97.7</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>173</id>
       <time>98.0</time>
       <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>166</id>
+    <note>
+      <id>174</id>
+      <time>98.2</time>
+      <type>1</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>175</id>
+      <time>98.3</time>
+      <type>5</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>176</id>
       <time>98.5</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>167</id>
-      <time>99.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>168</id>
-      <time>99.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>169</id>
-      <time>100.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>170</id>
-      <time>100.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>171</id>
-      <time>101.0</time>
+    <note>
+      <id>177</id>
+      <time>98.8</time>
       <type>3</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>172</id>
-      <time>101.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>173</id>
-      <time>102.0</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>174</id>
-      <time>102.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>175</id>
-      <time>103.0</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>176</id>
-      <time>103.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>177</id>
-      <time>104.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
+    <note>
       <id>178</id>
-      <time>104.5</time>
+      <time>99.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>179</id>
-      <time>105.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>180</id>
-      <time>105.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>181</id>
-      <time>106.0</time>
+      <time>99.3</time>
       <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>182</id>
-      <time>106.5</time>
+    <note>
+      <id>180</id>
+      <time>99.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>183</id>
-      <time>107.0</time>
+    <note>
+      <id>181</id>
+      <time>99.9</time>
       <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
+      <id>182</id>
+      <time>100.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>183</id>
+      <time>100.5</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
       <id>184</id>
-      <time>107.5</time>
+      <time>100.8</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>185</id>
-      <time>109.0</time>
-      <type>4</type>
+      <time>101.1</time>
+      <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>186</id>
-      <time>109.5</time>
+      <time>101.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>187</id>
-      <time>110.0</time>
-      <type>4</type>
+      <time>101.7</time>
+      <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>188</id>
-      <time>110.5</time>
+      <time>102.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>189</id>
+      <time>102.3</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>190</id>
+      <time>102.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>191</id>
+      <time>102.9</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>192</id>
+      <time>103.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>193</id>
+      <time>103.5</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>194</id>
+      <time>103.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>195</id>
+      <time>104.1</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>196</id>
+      <time>104.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>197</id>
+      <time>104.7</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>198</id>
+      <time>105.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>199</id>
+      <time>105.3</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>200</id>
+      <time>105.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>201</id>
+      <time>105.9</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>202</id>
+      <time>106.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>203</id>
+      <time>106.5</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>204</id>
+      <time>106.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>205</id>
+      <time>107.1</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>206</id>
+      <time>107.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>207</id>
+      <time>107.7</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>208</id>
+      <time>108.0</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>209</id>
+      <time>108.3</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>210</id>
+      <time>108.6</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>211</id>
+      <time>108.9</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>212</id>
+      <time>109.2</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>213</id>
+      <time>109.5</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>214</id>
+      <time>109.8</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>215</id>
+      <time>110.1</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>216</id>
+      <time>110.4</time>
+      <type>4</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>217</id>
+      <time>110.7</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>218</id>
       <time>111.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>190</id>
-      <time>111.5</time>
+    <note>
+      <id>219</id>
+      <time>111.3</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>220</id>
+      <time>111.6</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>191</id>
-      <time>112.0</time>
+    <note>
+      <id>221</id>
+      <time>111.9</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>222</id>
+      <time>112.2</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>192</id>
+    <note>
+      <id>223</id>
       <time>112.5</time>
+      <type>2</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>224</id>
+      <time>112.8</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>193</id>
-      <time>113.0</time>
+    <note>
+      <id>225</id>
+      <time>113.1</time>
+      <type>6</type>
+      <auto>0</auto>
+    </note>
+    <note>
+      <id>226</id>
+      <time>113.4</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>194</id>
-      <time>113.5</time>
-      <type>4</type>
+    <note>
+      <id>227</id>
+      <time>113.7</time>
+      <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>195</id>
+    <note>
+      <id>228</id>
       <time>114.0</time>
       <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>196</id>
-      <time>114.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>197</id>
-      <time>115.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>198</id>
-      <time>115.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>199</id>
-      <time>116.0</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>200</id>
-      <time>116.5</time>
-      <type>4</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>201</id>
-      <time>117.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>202</id>
-      <time>117.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>203</id>
-      <time>118.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>204</id>
-      <time>118.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>205</id>
-      <time>119.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>206</id>
-      <time>119.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>207</id>
-      <time>120.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>208</id>
-      <time>120.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>209</id>
-      <time>124.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>210</id>
-      <time>124.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>211</id>
-      <time>125.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>212</id>
-      <time>125.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>213</id>
-      <time>126.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>214</id>
-      <time>126.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>215</id>
-      <time>127.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>216</id>
-      <time>127.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>217</id>
-      <time>128.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>218</id>
-      <time>128.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>219</id>
-      <time>129.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>220</id>
-      <time>129.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>221</id>
-      <time>130.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>222</id>
-      <time>130.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>223</id>
-      <time>131.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>224</id>
-      <time>131.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>225</id>
-      <time>132.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>226</id>
-      <time>132.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>227</id>
-      <time>133.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>228</id>
-      <time>133.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
+    <note>
       <id>229</id>
-      <time>134.0</time>
-      <type>5</type>
+      <time>114.3</time>
+      <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>230</id>
-      <time>134.5</time>
-      <type>2</type>
+      <time>114.6</time>
+      <type>4</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>231</id>
-      <time>135.0</time>
-      <type>1</type>
+      <time>114.9</time>
+      <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>232</id>
-      <time>135.5</time>
-      <type>6</type>
+      <time>115.0</time>
+      <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>233</id>
-      <time>136.0</time>
-      <type>5</type>
+      <time>115.3</time>
+      <type>1</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>234</id>
-      <time>136.5</time>
+      <time>115.6</time>
       <type>6</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>235</id>
-      <time>137.0</time>
-      <type>1</type>
+      <time>115.9</time>
+      <type>5</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
+      <id>235</id>
+      <time>116.2</time>
+      <type>3</type>
+      <auto>0</auto>
+    </note>
+    <note>
       <id>236</id>
-      <time>137.5</time>
-      <type>2</type>
+      <time>116.5</time>
+      <type>1</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>237</id>
-      <time>138.0</time>
+      <time>116.6</time>
       <type>5</type>
       <auto>0</auto>
     </note>
-  <note>
+    <note>
       <id>238</id>
-      <time>138.5</time>
+      <time>116.8</time>
       <type>2</type>
       <auto>0</auto>
     </note>
-  <note>
-      <id>239</id>
-      <time>139.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>240</id>
-      <time>139.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>241</id>
-      <time>140.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>242</id>
-      <time>140.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>243</id>
-      <time>141.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>244</id>
-      <time>141.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>245</id>
-      <time>142.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>246</id>
-      <time>142.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>247</id>
-      <time>143.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>248</id>
-      <time>143.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>249</id>
-      <time>144.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>250</id>
-      <time>144.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>251</id>
-      <time>145.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>252</id>
-      <time>145.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>253</id>
-      <time>146.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>254</id>
-      <time>146.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>255</id>
-      <time>147.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>256</id>
-      <time>147.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>257</id>
-      <time>148.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>258</id>
-      <time>148.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>259</id>
-      <time>149.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>260</id>
-      <time>149.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>261</id>
-      <time>150.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>262</id>
-      <time>150.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>263</id>
-      <time>151.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>264</id>
-      <time>151.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>265</id>
-      <time>152.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>266</id>
-      <time>152.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>267</id>
-      <time>153.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>268</id>
-      <time>153.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>269</id>
-      <time>154.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>270</id>
-      <time>154.5</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>271</id>
-      <time>155.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>272</id>
-      <time>155.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>273</id>
-      <time>156.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>274</id>
-      <time>156.5</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>275</id>
-      <time>162.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>276</id>
-      <time>162.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>277</id>
-      <time>163.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>278</id>
-      <time>163.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>279</id>
-      <time>164.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>280</id>
-      <time>164.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>281</id>
-      <time>165.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>282</id>
-      <time>165.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>283</id>
-      <time>166.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>284</id>
-      <time>166.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>285</id>
-      <time>167.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>286</id>
-      <time>167.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>287</id>
-      <time>168.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>288</id>
-      <time>168.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>289</id>
-      <time>169.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>290</id>
-      <time>169.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>291</id>
-      <time>170.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>292</id>
-      <time>170.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>293</id>
-      <time>171.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>294</id>
-      <time>171.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>295</id>
-      <time>172.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>296</id>
-      <time>172.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>297</id>
-      <time>173.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>298</id>
-      <time>173.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>299</id>
-      <time>174.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>300</id>
-      <time>174.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>301</id>
-      <time>175.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>302</id>
-      <time>175.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>303</id>
-      <time>176.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>304</id>
-      <time>176.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>305</id>
-      <time>177.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>306</id>
-      <time>177.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>307</id>
-      <time>178.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>308</id>
-      <time>178.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>309</id>
-      <time>179.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>310</id>
-      <time>179.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>311</id>
-      <time>180.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>312</id>
-      <time>180.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>313</id>
-      <time>181.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>314</id>
-      <time>181.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>315</id>
-      <time>182.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>316</id>
-      <time>182.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>317</id>
-      <time>183.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>318</id>
-      <time>183.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>319</id>
-      <time>184.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>320</id>
-      <time>184.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>321</id>
-      <time>185.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>322</id>
-      <time>185.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>323</id>
-      <time>186.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>324</id>
-      <time>186.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>325</id>
-      <time>187.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>326</id>
-      <time>187.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>327</id>
-      <time>188.0</time>
-      <type>1</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>328</id>
-      <time>188.5</time>
-      <type>2</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>329</id>
-      <time>189.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>330</id>
-      <time>189.5</time>
-      <type>6</type>
-      <auto>0</auto>
-    </note>
-  <note>
-      <id>331</id>
-      <time>190.0</time>
-      <type>5</type>
-      <auto>0</auto>
-    </note>
+
   </note-list>
 </level>

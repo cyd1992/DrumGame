@@ -45,7 +45,7 @@ bool ModeSelectScene::init()
 	//load backgroud
 	auto background = Sprite::create("mode.png");
 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	background->setScale(0.5);
+	background->setScale(1);
 
 	addChild(background, 10);
 
