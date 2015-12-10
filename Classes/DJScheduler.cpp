@@ -38,8 +38,12 @@ void DJScheduler::callback1(float dt)
 
 			noteSprite->setPosition(visibleSize.width *1.20, visibleSize.height * 0.9);
 			noteSprite->setScale(2);
-			if (_note._type == 1) noteSprite->setScale(1);
-
+			noteSprite->setScaleX(0.7);
+			if (_note._type == 1)
+			{
+				noteSprite->setScale(1);
+				noteSprite->setScaleX(0.7);
+			}
 			//noteSprite->setOpacity(100);
 			//panel->addChild(noteSprite);
 			noteSprite->setTag(100 + _id);

@@ -8,6 +8,8 @@
 
 #include "XMLParseUtil.h"
 
+#include "ToastSprite.h"
+
 
 USING_NS_CC;
 using namespace cocos2d::experimental;
@@ -61,7 +63,7 @@ bool MainGameScene::init()
 	//drum->ignoreAnchorPointForPosition(true);
 	drum->setPosition(visibleSize.width/2, visibleSize.height /2);
 	drum->setScale(1);
-	addChild(drum, 0);
+	addChild(drum, 10);
 
 
 	//panel
@@ -187,6 +189,7 @@ bool MainGameScene::init()
 	_scoreLabel = LabelTTF::create();
 	_scoreLabel->setFontName("Marker Felt");
 	_scoreLabel->setFontSize(48);
+	_scoreLabel->setFontFillColor(Color3B(255, 0, 0));
 	_scoreLabel->setString(stringLabel);
 	addChild(_scoreLabel,20);
 	_scoreLabel->setPosition(Vec2(visibleSize.width *0.9, visibleSize.height * 0.9));
@@ -223,6 +226,8 @@ bool MainGameScene::init()
 	};
 
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+
+	
 
 	return true;
 }

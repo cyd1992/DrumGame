@@ -6,6 +6,8 @@
 
 #include "ComboNode.h"
 
+#include "ToastSprite.h"
+
 class MainGameScene : public cocos2d::Layer
 {
 public:
@@ -28,6 +30,8 @@ public:
 	cocos2d::experimental::AudioProfile _audioProfile;
 
 	ComboNode* _comboNode;
+
+	ToastSprite* _toastSprite;
 
 };
 

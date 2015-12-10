@@ -11,6 +11,10 @@
 
 #include "ComboNode.h"
 
+#include "PracticeSelectScene.h"
+
+#include "ToastSprite.h"
+
 USING_NS_CC;
 
 Scene* MenuScene::createScene()
@@ -69,12 +73,14 @@ bool MenuScene::init()
 	auto item1 = MenuItemFont::create("DrumGameScene", CC_CALLBACK_1(MenuScene::menuCallbackMain, this));
 	auto item2 = MenuItemFont::create("Band Mode", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
 	auto item3 = MenuItemFont::create("WelcomeScene", CC_CALLBACK_1(MenuScene::menuCallbackAudio, this));
+	auto item4 = MenuItemFont::create("Practice Mode", CC_CALLBACK_1(MenuScene::menuCallbackPractice, this));
 
 	item1->setScale(2);
 	item2->setScale(2);
 	item3->setScale(2);
+	item4->setScale(2);
 
-	auto menu = Menu::create(item1,item2,item3, nullptr);
+	auto menu = Menu::create(item1, item2, item3, item4, nullptr);
 	menu->alignItemsVertically();
 	
 
@@ -99,8 +105,10 @@ bool MenuScene::init()
 
 	addChild(combo);
 
-	//log test
-	log("log test!");
+	//toast test
+	auto toast = ToastSprite::create(0);
+	toast->setPosition(visibleSize.width * 0.2, visibleSize.height * 0.6);
+	addChild(toast);
 
 	return true;
 }
@@ -132,11 +140,12 @@ void MenuScene::menuCloseCallback(Ref* pSender)
 
 void MenuScene::menuCallbackMain(cocos2d::Ref* sender)
 {
-	log("trace1");
-
 	XMLParseUtil::ParseLevel("level/level_sample_1.xml");
 
-
-	log("trace2");
 	Director::getInstance()->replaceScene(MainGameScene::createScene());
+}
+
+void MenuScene::menuCallbackPractice(cocos2d::Ref* sender)
+{
+	Director::getInstance()->replaceScene(PracticeSelectScene::createScene());
 }

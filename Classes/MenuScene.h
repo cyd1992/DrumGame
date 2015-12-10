@@ -20,6 +20,7 @@ public:
 	void menuCallbackAudio(cocos2d::Ref* sender);
 	void menuCallbackDisk(cocos2d::Ref* sender);
 	void menuCallbackMain(cocos2d::Ref* sender);
+	void menuCallbackPractice(cocos2d::Ref* sender);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -2,7 +2,7 @@
 
 #include "MainGameScene.h"
 
-
+#include "ScoreUtil.h"
 
 USING_NS_CC;
 using namespace cocos2d::experimental;
@@ -25,7 +25,7 @@ DrumSprite* DrumSprite::create(const std::string& filename)
 		sprite->autorelease();
 		//sprite->_id = 7;
 		//sprite->musicFile = new std::string("music/t1.mp3");
-		//log("%d", sprite->_id);
+		//log("%d", sprite->_id);///////////////////////////////////////////////
 		return sprite;
 	}
 	CC_SAFE_DELETE(sprite);
@@ -79,34 +79,14 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 			//score
 			auto scene = (MainGameScene*)(this->getParent());
 			auto note = scene->getChildByTag(scene->_curTag);
-			float dist = note->getPositionX() - visibleSize.width * 0.15;
+			if (note != nullptr) {
 
-			if (dist < 0) dist =  dist * -1;
-			log("dist: %f", dist);
-			if (dist <= 50)
-			{
-				scene->_combo++;
+				float dist = note->getPositionX() - visibleSize.width * 0.15;
 
-				scene->_score += 100;
-				char t[100];
-				sprintf(t, "%d", scene->_score);
-				scene->_scoreLabel->setString(t);	
+				ScoreUtil::SetScore(dist, scene);
 
-
-				char t2[10];
-				sprintf(t2, "combo x%d", scene->_combo);
-				scene->_comboNode->stopAllActions();
-				scene->_comboNode->_label->setOpacity(0);
-				scene->_comboNode->_label->setString(t2);
-
-				scene->_comboNode->RunAction();
-				
-				
 			}
-			else
-			{
-				scene->_combo = 0;
-			}
+			
 
 			return true;
 		}

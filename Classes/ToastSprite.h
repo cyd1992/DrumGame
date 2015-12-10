@@ -14,8 +14,9 @@ public:
 	int _type = 0;
 
 	// rewrite
-	static ToastSprite* create(const std::string& filename);
+	static ToastSprite* create(int type);
 
+	void RunAction();
 	
 };
 
