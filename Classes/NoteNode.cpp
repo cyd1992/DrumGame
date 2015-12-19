@@ -66,13 +66,40 @@ void NoteNode::StartDrop()
 
 	});
 
-	auto move3 = MoveBy::create(1, Vec2(-1 * visibleSize.width / 3, 0));
+	auto move3 = MoveBy::create(0.3, Vec2(-1 * visibleSize.width *0.1, 0));
+
 	auto callfunc3 = CallFunc::create([this]() {
+		//log("remove!");
+		//
+		if (!this->isKilled)
+		{
+			Size visibleSize = Director::getInstance()->getVisibleSize();
+
+			auto scene = (MainGameScene*)(this->getParent());
+			scene->_combo = 0;
+			
+			//toast
+			if (scene->_toastSprite != nullptr)
+			{
+				scene->_toastSprite->stopAllActions();
+				scene->_toastSprite->removeFromParentAndCleanup(true);
+			}
+
+			scene->_toastSprite = ToastSprite::create(4);
+			scene->_toastSprite->setPosition(visibleSize.width *0.5, visibleSize.height *0.7);
+			scene->_toastSprite->setOpacity(0);
+			scene->addChild(scene->_toastSprite, 30);
+			scene->_toastSprite->RunAction();
+		}
+	});
+
+	auto move4 = MoveBy::create(1, Vec2(-1 * visibleSize.width / 3, 0));
+	auto callfunc4 = CallFunc::create([this]() {
 		//log("remove!");
 		this->removeFromParentAndCleanup(true);
 	});
 
-	auto seq = Sequence::create(move1, callfunc1, move2, callfunc2, move3, callfunc3, NULL);
+	auto seq = Sequence::create(move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
 
 	this->runAction(seq);
 }

@@ -76,7 +76,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 
 			Size visibleSize = Director::getInstance()->getVisibleSize();
-			//score
+			//score 
 			auto scene = (MainGameScene*)(this->getParent());
 			auto note = scene->getChildByTag(scene->_curTag);
 			if (note != nullptr) {

@@ -11,6 +11,8 @@ public:
 	int _auto = 0;
 	int _type;
 
+	boolean isKilled = false;
+
 	static NoteNode* create(int note_tag);
 
 	virtual bool init(int note_tag);

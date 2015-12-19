@@ -1,5 +1,7 @@
 #include "ScoreUtil.h"
 
+#include "NoteNode.h"
+
 USING_NS_CC;
 
 void ScoreUtil::SetScore(float dist, MainGameScene* scene)
@@ -60,10 +62,17 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 
 		scene->_comboNode->RunAction();
 
+		((NoteNode*)(scene->getChildByTag(scene->_curTag)))->isKilled = true;
+
+		scene->_curTag++;
+		
+
 	}
 	else
 	{
 		scene->_combo = 0;
 	}
+
+	
 }
 
