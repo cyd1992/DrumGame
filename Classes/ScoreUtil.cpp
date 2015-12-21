@@ -73,6 +73,5 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 		scene->_combo = 0;
 	}
 
-	
 }
 

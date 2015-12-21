@@ -10,7 +10,7 @@ USING_NS_CC;
 std::vector<NoteInfo> XMLParseUtil::_vec;
 std::string * XMLParseUtil::_musicPath[10] = { new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string() };
 std::string * XMLParseUtil::_bgmPath = new std::string();
-
+float XMLParseUtil::_total = 0;
 
 XMLParseUtil::~XMLParseUtil()
 {
@@ -86,6 +86,7 @@ void XMLParseUtil::ParseLevel(const char* file)
 
 	//   total
 	tinyxml2::XMLElement* totalElement = trackElement->NextSiblingElement();
+	_total = atof(totalElement->GetText());
 
 	//log("total: %s", totalElement->GetText());
 

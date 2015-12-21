@@ -6,7 +6,11 @@
 #include "NoteNode.h"
 #include <math.h>
 
+#include "MainGameScene.h"
+
+#include "JiesuanScene.h"
 USING_NS_CC;
+using namespace cocos2d::experimental;
 //float DJScheduler::_time = -3.0f;
 //int DJScheduler::_id = 0;
 
@@ -21,10 +25,19 @@ void DJScheduler::callback1(float dt)
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 
 	//CCLOG("time: %f",_time);
-	if (_time < 300.0f)
+	float time_temp = _time - 3.0f;
+
+	//log("time_temp: %f  time:%f", time_temp,_time);
+	if (time_temp < 0.01  &&  time_temp >-0.01)
+	{
+		//play back
+		auto scene = (MainGameScene*)this->getParent();
+		scene->_backId = AudioEngine::play2d(*XMLParseUtil::_bgmPath, false, 0.3f, &scene->_audioProfile);
+		//log("time_temp: %f", time_temp);
+	}else if ( time_temp < XMLParseUtil::_total )
 	{
 		float note_time = _note._time;
-		float pre_time = _time + 3;
+		float pre_time = time_temp + 3.0f;
 		if (abs(note_time - pre_time) < 0.01)
 		{
 			//drumpane's tag is 101;
@@ -44,6 +57,7 @@ void DJScheduler::callback1(float dt)
 				noteSprite->setScale(1);
 				noteSprite->setScaleX(0.7);
 			}
+
 			//noteSprite->setOpacity(100);
 			//panel->addChild(noteSprite);
 			noteSprite->setTag(100 + _id);
@@ -52,12 +66,20 @@ void DJScheduler::callback1(float dt)
 
 			_id++;
 
-
 		}
 
-		_time += dt;
+
+		
 		//CCLOG("dt: %f    time: %f", dt,_time);
 	}
+	else
+	{
+		log("end!");
+		AudioEngine::stop(( (MainGameScene*)this->getParent())->_backId);
+		Director::getInstance()->replaceScene(JiesuanScene::createScene());
+	}
+
+	_time += dt;
 }
 
 void DJScheduler::StartTimer()

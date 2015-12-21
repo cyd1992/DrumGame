@@ -25,7 +25,7 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
     <src id="5">music/beat1.mp3</src>
     <src id="6">music/beat1.mp3</src>
   </track>
-  <total>1</total>
+  <total>88</total>
   <note-list>
     <note>
       <id>0</id>

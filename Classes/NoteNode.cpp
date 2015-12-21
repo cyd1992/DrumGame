@@ -51,7 +51,10 @@ void NoteNode::StartDrop()
 		//log("remove!");
 		//this->removeFromParentAndCleanup(true);
 		auto scene = (MainGameScene*)(this->getParent());
-		scene->_curTag = this->getTag();
+
+		if(this->getTag() >= scene->_curTag)
+			scene->_curTag = this->getTag();
+
 		//if auto   play music
 
 	});
@@ -90,6 +93,8 @@ void NoteNode::StartDrop()
 			scene->_toastSprite->setOpacity(0);
 			scene->addChild(scene->_toastSprite, 30);
 			scene->_toastSprite->RunAction();
+
+
 		}
 	});
 
@@ -102,5 +107,7 @@ void NoteNode::StartDrop()
 	auto seq = Sequence::create(move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
 
 	this->runAction(seq);
+
+
 }
 

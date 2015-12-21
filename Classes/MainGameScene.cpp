@@ -172,8 +172,8 @@ bool MainGameScene::init()
 		}
 	});
 
-	_backId = AudioEngine::play2d(* XMLParseUtil::_bgmPath, false, 0.3f, &_audioProfile);
-	log("backid: %d", _backId);
+	//_backId = AudioEngine::play2d(* XMLParseUtil::_bgmPath, false, 0.3f, &_audioProfile);
+	//log("backid: %d", _backId);
 //note test
 // 	auto note = NoteSprite::create("note.png");
 // 	note->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
