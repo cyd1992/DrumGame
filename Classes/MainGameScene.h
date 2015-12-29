@@ -11,6 +11,8 @@
 class MainGameScene : public cocos2d::Layer
 {
 public:
+	~MainGameScene();
+
 	static cocos2d::Scene* createScene();
 
 	virtual bool init();
@@ -33,6 +35,18 @@ public:
 
 	ToastSprite* _toastSprite;
 
+private:
+	void my_init_old();
+	void my_init();
+	cocos2d::Node* drum1, *drum2, *drum3, *drum4, *drum5, *drum6 ;
+	cocos2d::Sprite* drum_t1, *drum_t2;
+	cocos2d::Sprite* zhijia;
+
+	cocos2d::MoveBy* move;
+	cocos2d::Node* gradient;
+	cocos2d::LayerColor* panelLayer;
+	cocos2d::Sprite* drum_panel;
+	cocos2d::Sprite* light;
 };
 
 #endif
