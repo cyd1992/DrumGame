@@ -58,6 +58,8 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 		if (rect.containsPoint(locationInNode))
 		{
+			this->setTexture("main/drum4_sel.png");
+			//this->setSpriteFrame(SpriteFrame::create("main/drum4_sel.png", Rect(0, 0, 457, 282)));
 			//auto temp =  static_cast<AudioTestScene*>(target->getParent());
 
 			//log("sprite began... x = %f, y = %f", locationInNode.x, locationInNode.y);
@@ -77,7 +79,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 			Size visibleSize = Director::getInstance()->getVisibleSize();
 			//score 
-			auto scene = (MainGameScene*)(this->getParent());
+			auto scene = (MainGameScene*)(this->getParent()->getParent());
 			auto note = scene->getChildByTag(scene->_curTag);
 			if (note != nullptr) {
 
@@ -96,6 +98,11 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 	listener1->onTouchEnded = [&](Touch* touch, Event* event) {
 		auto target = static_cast<Sprite*>(event->getCurrentTarget());
+
+		this->setTexture("main/drum4.png");
+		//this->setSpriteFrame(SpriteFrame::create("main/drum4.png", Rect(0, 0, 417, 242)));
+
+
 		// 		log("sprite onTouchesEnded.. ");
 		//target->setOpacity(255);
 
@@ -116,7 +123,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 	listener1->retain();
 
-	(this->getParent())->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, this);
+	(this->getParent()->getParent())->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, this);
 
 
 }

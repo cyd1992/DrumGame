@@ -9,7 +9,6 @@ NoteNode* NoteNode::create(int note_tag)
 	if (node && node->init(note_tag))
 	{
 		node->autorelease();
-
 		return node;
 	}
 	CC_SAFE_DELETE(node);
@@ -80,19 +79,29 @@ void NoteNode::StartDrop()
 
 			auto scene = (MainGameScene*)(this->getParent());
 			scene->_combo = 0;
-			
-			//toast
-			if (scene->_toastSprite != nullptr)
-			{
-				scene->_toastSprite->stopAllActions();
-				scene->_toastSprite->removeFromParentAndCleanup(true);
-			}
 
-			scene->_toastSprite = ToastSprite::create(4);
-			scene->_toastSprite->setPosition(visibleSize.width *0.5, visibleSize.height *0.7);
-			scene->_toastSprite->setOpacity(0);
-			scene->addChild(scene->_toastSprite, 30);
-			scene->_toastSprite->RunAction();
+			scene->hud_layer->_combo->setString("0");
+			
+			scene->hud_layer->_perform->stopAllActions();
+			scene->hud_layer->_perform->setString("MISS");
+			scene->hud_layer->_perform->setScaleX(0);
+			scene->hud_layer->_perform->setColor(Color3B(255, 0, 0));
+			scene->hud_layer->_perform->runAction(ScaleTo::create(0.1f, 1, 1));
+			//scene->hud_layer->_perform->setScaleX(0);
+
+			//toast
+// 			if (scene->_toastSprite != nullptr)
+// 			{
+// 				scene->_toastSprite->stopAllActions();
+// 				scene->_toastSprite->removeFromParentAndCleanup(true);
+// 			}
+// 
+// 			scene->_toastSprite = ToastSprite::create(4);
+// 			scene->_toastSprite->setPosition(visibleSize.width *0.5, visibleSize.height *0.7);
+// 			scene->_toastSprite->setOpacity(0);
+// 			scene->addChild(scene->_toastSprite, 30);
+// 			scene->_toastSprite->RunAction();
+
 
 
 		}

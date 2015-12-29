@@ -16,6 +16,7 @@ public:
 	void StartTimer();
 
 	void callback1(float dt);
+	void callback2(float dt);
 
 	float abs(float f);
 

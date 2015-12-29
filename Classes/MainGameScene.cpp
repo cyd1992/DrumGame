@@ -10,6 +10,8 @@
 
 #include "ToastSprite.h"
 
+#include "HUD.h"
+
 
 USING_NS_CC;
 using namespace cocos2d::experimental;
@@ -267,7 +269,7 @@ void MainGameScene::my_init()
 	src_location[0].height = 1080 - 395;     //drum_t1
 
 	drum_t1 = Sprite::create("main/drum_t1.png");
-	drum_t1->setPosition(src_location[0].width, src_location[0].height - 1080);
+	drum_t1->setPosition(src_location[0].width, src_location[0].height);
 
 	//move = MoveBy::create(0.5f, Vec2(0, 1080));
 
@@ -275,7 +277,7 @@ void MainGameScene::my_init()
 	//drum_t1->runAction(move);
 
 	drum_t2 = Sprite::create("main/drum_t2.png");
-	drum_t2->setPosition(1560, 1080 - 450 -1080);
+	drum_t2->setPosition(1560, 1080 - 450 );
 
 	addChild(drum_t2, 10);
 
@@ -289,7 +291,7 @@ void MainGameScene::my_init()
 	drum1->addChild(drum1_d, 20);
 	drum1->addChild(drum1_t, 10);
 
-	drum1->setPosition(475, 1080 - 840 -1080);
+	drum1->setPosition(475, 1080 - 840);
 
 	addChild(drum1, 9);
 
@@ -304,7 +306,7 @@ void MainGameScene::my_init()
 	drum3->addChild(drum3_d, 20);
 	drum3->addChild(drum3_t, 10);
 
-	drum3->setPosition(335, 1080 - 635 -1080);
+	drum3->setPosition(335, 1080 - 635 );
 	
 	addChild(drum3, 10);
 
@@ -320,7 +322,7 @@ void MainGameScene::my_init()
 	drum2->addChild(drum2_d, 20);
 	drum2->addChild(drum2_t, 10);
 
-	drum2->setPosition(730, 1080 - 640 -1080);
+	drum2->setPosition(730, 1080 - 640 );
 
 	addChild(drum2, 11);
 
@@ -336,14 +338,16 @@ void MainGameScene::my_init()
 	drum6->addChild(drum6_d, 20);
 	drum6->addChild(drum6_t, 10);
 
-	drum6->setPosition(1130, 1080 - 640 -1080);
+	drum6->setPosition(1130, 1080 - 640 );
 	addChild(drum6, 11);
 
 
 	drum4 = Node::create();
-	auto drum4_d = Sprite::create("main/drum4.png");
+	auto drum4_d = DrumSprite::create("main/drum4.png");
+	drum4_d->setMusicFile(*XMLParseUtil::_musicPath[3]);
 
 	drum4_d->setPosition(0, 0);
+	
 
 	auto drum4_t = Sprite::create("main/drum4_t.png");
 	drum4_t->setPosition(0, 58);
@@ -351,9 +355,11 @@ void MainGameScene::my_init()
 	drum4->addChild(drum4_d, 20);
 	drum4->addChild(drum4_t, 10);
 
-	drum4->setPosition(930, 1080 - 950 -1080);
+	drum4->setPosition(930, 1080 - 950);
 
 	addChild(drum4, 10);
+
+	drum4_d->RegistListener(_audioProfile);
 
 	drum5 = Node::create();
 	auto drum5_d = Sprite::create("main/drum5.png");
@@ -366,14 +372,14 @@ void MainGameScene::my_init()
 	drum5->addChild(drum5_d, 20);
 	drum5->addChild(drum5_t, 10);
 
-	drum5->setPosition(1420, 1080 - 865 - 1080);
+	drum5->setPosition(1420, 1080 - 865 );
 	addChild(drum5, 12);
 
 
 	//zhijia
 	zhijia = Sprite::create("main/zhijia.png");
 	zhijia->setPosition(990, 265);
-	zhijia->setOpacity(0);
+	//zhijia->setOpacity(0);
 
 	addChild(zhijia, 5);
 
@@ -381,38 +387,47 @@ void MainGameScene::my_init()
 	//  灯光
 	light = Sprite::create("main/light.png");
 	light->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	light->setOpacity(0);
+	//light->setOpacity(0);
 
 	addChild(light, 31);
 
-	 //渐变层
-	gradient = Node::create();
+	
 
 
 	//hud
-	auto hud = Sprite::create("main/hud.png");
-	hud->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	addChild(hud, 50);
+	auto hud_t = Sprite::create("main/hud.png");
+	hud_t->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	//addChild(hud_t, 50);
 
-
-	auto label = LabelTTF::create("PERFECT", "font/arial.ttf", 40);
-// 	label->setFontName("font/MF.otf");
-// 	label->setFontSize(30);
+	auto label = LabelTTF::create("PERFECT", "fonts/Duck-esa.ttf", 55);
+	// 	label->setFontName("font/MF.otf");
+	// 	label->setFontSize(30);
 	label->setColor(Color3B(255, 0, 0));
-	label->setString("PERFECT");
-	label->setPosition(visibleSize.width / 2, visibleSize.height*0.9);
-	addChild(label);
+	//label->setString("PERFECT 好");
+	label->setPosition(visibleSize.width / 2, visibleSize.height*0.95);
+	//addChild(label);
+
+	hud_layer = HUD::create();
+	hud_layer->ignoreAnchorPointForPosition(true);
+	hud_layer->setPosition(0, 1020);
+	addChild(hud_layer, 50);
+
+
+	//渐变层
+	gradient = Node::create();
+	
+
 
 	auto gradient_1 = LayerColor::create(Color4B(20, 30, 52, 255));
 	gradient_1->changeWidthAndHeight(1920, 200);
 	gradient_1->setTag(1);
 	gradient_1->setPosition(0, 200);
-	gradient_1->setOpacity(0);
+	//gradient_1->setOpacity(0);
 	auto gradient_2 = LayerGradient::create(Color4B(20, 30, 52, 255), Color4B(20, 30, 52, 0));
 	gradient_2->changeWidthAndHeight(1920, 200);
 	gradient_2->setPosition(0, 0);
 	gradient_2->setTag(2);
-	gradient_2->setOpacity(0);
+	//gradient_2->setOpacity(0);
 	gradient->addChild(gradient_1, 1);
 	gradient->addChild(gradient_2, 0);
 	gradient->setPosition(0, 1080 - 550);
@@ -423,14 +438,14 @@ void MainGameScene::my_init()
 	//panel
 	panelLayer = LayerColor::create(Color4B(255, 255, 255, 37));
 	panelLayer->changeWidthAndHeight(1920, 220);
-	panelLayer->setPosition(0 - 1920, 1080 - 330);
-	panelLayer->setScaleY(0.03);
+	panelLayer->setPosition(0 , 1080 - 330);
+	//panelLayer->setScaleY(0.03);
 	addChild(panelLayer, 40);
 
 	//drum panel
 	drum_panel = Sprite::create("main/drum_panel.png");
 	drum_panel->setPosition(185, 1080 - 220);
-	drum_panel->setOpacity(0);
+	//drum_panel->setOpacity(0);
 	addChild(drum_panel, 45);
 
 
@@ -465,7 +480,32 @@ void MainGameScene::my_init()
 	auto seq = Sequence::create(delay, callfunc1, delay, callfunc2, delay, callfunc3, delay, callfunc4,
 								delay, callfunc5, delay, callfunc6, delay, callfunc7, delay, callfunc8, 
 		                        DelayTime::create(0.5f), callfunc9, callfunc10, nullptr);
-	this->runAction(seq);
+	//this->runAction(seq);
+
+
+	// scheduler test
+	auto sche = DJScheduler::create();
+	addChild(sche);
+
+	sche->StartTimer();
+
+	//audio profile
+	_audioProfile.name = "DrumPanel";
+	_audioProfile.maxInstances = 10;
+	_audioProfile.minDelay = 0.05;
+
+	AudioEngine::preload(*XMLParseUtil::_bgmPath, [](bool isSuccess) {
+		if (isSuccess)
+		{
+			//stateLabel->setString("status:load success");
+			//log("load music/beat1.mp3  succeed!");
+		}
+		else
+		{
+			//stateLabel->setString("status:load fail");
+			//log("load music/beat1.mp3  failed!");
+		}
+	});
 }
 
 MainGameScene::~MainGameScene()

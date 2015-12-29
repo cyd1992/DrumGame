@@ -7,7 +7,7 @@
 #include "ComboNode.h"
 
 #include "ToastSprite.h"
-
+#include "HUD.h"
 class MainGameScene : public cocos2d::Layer
 {
 public:
@@ -34,6 +34,7 @@ public:
 	ComboNode* _comboNode;
 
 	ToastSprite* _toastSprite;
+	HUD* hud_layer;
 
 private:
 	void my_init_old();
@@ -47,6 +48,8 @@ private:
 	cocos2d::LayerColor* panelLayer;
 	cocos2d::Sprite* drum_panel;
 	cocos2d::Sprite* light;
+
+
 };
 
 #endif

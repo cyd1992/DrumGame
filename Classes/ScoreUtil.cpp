@@ -38,29 +38,29 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 		scene->_score += score_temp * combo_factor;
 
 		//toast
-		if (scene->_toastSprite != nullptr)
-		{
-			scene->_toastSprite->stopAllActions();
-			scene->_toastSprite->removeFromParentAndCleanup(true);
-		}
+// 		if (scene->_toastSprite != nullptr)
+// 		{
+// 			scene->_toastSprite->stopAllActions();
+// 			scene->_toastSprite->removeFromParentAndCleanup(true);
+// 		}
+// 
+// 		scene->_toastSprite = ToastSprite::create(type);
+// 		scene->_toastSprite->setPosition(visibleSize.width *0.5, visibleSize.height *0.7);
+// 		scene->_toastSprite->setOpacity(0);
+// 		scene->addChild(scene->_toastSprite, 30);
+// 		scene->_toastSprite->RunAction();
 
-		scene->_toastSprite = ToastSprite::create(type);
-		scene->_toastSprite->setPosition(visibleSize.width *0.5, visibleSize.height *0.7);
-		scene->_toastSprite->setOpacity(0);
-		scene->addChild(scene->_toastSprite, 30);
-		scene->_toastSprite->RunAction();
-
-		char t[100];
-		sprintf(t, "%d", scene->_score);
-		scene->_scoreLabel->setString(t);
-
-		char t2[10];
-		sprintf(t2, "combo x%d", scene->_combo);
-		scene->_comboNode->stopAllActions();
-		scene->_comboNode->_label->setOpacity(0);
-		scene->_comboNode->_label->setString(t2);
-
-		scene->_comboNode->RunAction();
+// 		char t[100];
+// 		sprintf(t, "%d", scene->_score);
+// 		scene->_scoreLabel->setString(t);
+// 
+// 		char t2[10];
+// 		sprintf(t2, "combo x%d", scene->_combo);
+// 		scene->_comboNode->stopAllActions();
+// 		scene->_comboNode->_label->setOpacity(0);
+// 		scene->_comboNode->_label->setString(t2);
+// 
+// 		scene->_comboNode->RunAction();
 
 		((NoteNode*)(scene->getChildByTag(scene->_curTag)))->isKilled = true;
 
