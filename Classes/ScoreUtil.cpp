@@ -62,6 +62,24 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 // 
 // 		scene->_comboNode->RunAction();
 
+		char t[100];
+		sprintf(t, "%d", scene->_score);
+		scene->hud_layer->_score->setString(t);
+
+		char t2[10];
+		sprintf(t2, "%d", scene->_combo);
+		scene->hud_layer->_combo->setString(t2);
+
+		switch (type)
+		{
+		case 0:SetPerform(scene, "PERFECT", Color3B(191, 56, 142));break;
+		case 1:SetPerform(scene, "GREAT", Color3B(0, 125, 197)); break;
+		case 2:SetPerform(scene, "NICE", Color3B(0, 163, 89)); break;
+		case 3:SetPerform(scene, "NICE", Color3B(0, 163, 89)); break;
+		default:
+			break;
+		}
+
 		((NoteNode*)(scene->getChildByTag(scene->_curTag)))->isKilled = true;
 
 		scene->_curTag++;
@@ -73,5 +91,14 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 		scene->_combo = 0;
 	}
 
+}
+
+void ScoreUtil::SetPerform(MainGameScene* scene, std::string s, Color3B c)
+{
+	scene->hud_layer->_perform->stopAllActions();
+	scene->hud_layer->_perform->setString(s);
+	scene->hud_layer->_perform->setScaleX(0);
+	scene->hud_layer->_perform->setColor(c);
+	scene->hud_layer->_perform->runAction(ScaleTo::create(0.1f, 1, 1));
 }
 

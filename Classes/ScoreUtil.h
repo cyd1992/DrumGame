@@ -9,6 +9,8 @@ class ScoreUtil
 public:
 	static void SetScore(float dist , MainGameScene* scene );
 
+private:
+	static void SetPerform(MainGameScene* scene, std::string s, cocos2d::Color3B c);
 };
 
 #endif

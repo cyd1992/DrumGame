@@ -38,7 +38,7 @@ bool HUD::init()
 	addChild(_comboConst);
 
 	//combo
-	_combo = LabelTTF::create("55", "goma block", 110);
+	_combo = LabelTTF::create("0", "goma block", 110);
 	_combo->setColor(Color3B(255, 255, 255));
 	_combo->setPosition(100, 0);
 	addChild(_combo);

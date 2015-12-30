@@ -115,7 +115,7 @@ void DJScheduler::callback2(float dt)
 			// 			if(_note._index == 0) noteSprite->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
 			// 			else if(_note._index == 1) noteSprite->setPosition(visibleSize.width *0.3, visibleSize.height *1.2);
 
-			noteSprite->setPosition(visibleSize.width *1.20, 860);
+			noteSprite->setPosition(visibleSize.width *1.15, 860);
 			noteSprite->setScale(2);
 			noteSprite->setScaleX(0.7);
 			if (_note._type == 1)

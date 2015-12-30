@@ -282,7 +282,9 @@ void MainGameScene::my_init()
 	addChild(drum_t2, 10);
 
 	drum1 = Node::create();
-	auto drum1_d = Sprite::create("main/drum1.png");
+	auto drum1_d = DrumSprite::create("main/drum1.png");
+	drum1_d->setSelSprite("main/drum1_sel.png");
+	drum1_d->setMusicFile(*XMLParseUtil::_musicPath[0]);
 	drum1_d->setPosition(0, 0);
 
 	auto drum1_t = Sprite::create("main/drum1_t.png");
@@ -295,9 +297,13 @@ void MainGameScene::my_init()
 
 	addChild(drum1, 9);
 
+	drum1_d->RegistListener(_audioProfile);
+
 	//
 	drum3 = Node::create();
-	auto drum3_d = Sprite::create("main/drum3.png");
+	auto drum3_d = DrumSprite::create("main/drum3.png");
+	drum3_d->setSelSprite("main/drum3_sel.png");
+	drum3_d->setMusicFile(*XMLParseUtil::_musicPath[2]);
 	drum3_d->setPosition(0, 0);
 
 	auto drum3_t = Sprite::create("main/drum3_t.png");
@@ -310,10 +316,12 @@ void MainGameScene::my_init()
 	
 	addChild(drum3, 10);
 
-	
+	drum3_d->RegistListener(_audioProfile);
 
 	drum2 = Node::create();
-	auto drum2_d = Sprite::create("main/drum2.png");
+	auto drum2_d = DrumSprite::create("main/drum2.png");
+	drum2_d->setSelSprite("main/drum2_sel.png");
+	drum2_d->setMusicFile(*XMLParseUtil::_musicPath[1]);
 	drum2_d->setPosition(0, 0);
 
 	auto drum2_t = Sprite::create("main/drum2_t.png");
@@ -326,9 +334,12 @@ void MainGameScene::my_init()
 
 	addChild(drum2, 11);
 
+	drum2_d->RegistListener(_audioProfile);
 
 	drum6 = Node::create();
-	auto drum6_d = Sprite::create("main/drum6.png");
+	auto drum6_d = DrumSprite::create("main/drum6.png");
+	drum6_d->setSelSprite("main/drum6_sel.png");
+	drum6_d->setMusicFile(*XMLParseUtil::_musicPath[5]);
 
 	drum6_d->setPosition(0, 0);
 
@@ -341,9 +352,11 @@ void MainGameScene::my_init()
 	drum6->setPosition(1130, 1080 - 640 );
 	addChild(drum6, 11);
 
+	drum6_d->RegistListener(_audioProfile);
 
 	drum4 = Node::create();
 	auto drum4_d = DrumSprite::create("main/drum4.png");
+	drum4_d->setSelSprite("main/drum4_sel.png");
 	drum4_d->setMusicFile(*XMLParseUtil::_musicPath[3]);
 
 	drum4_d->setPosition(0, 0);
@@ -362,7 +375,9 @@ void MainGameScene::my_init()
 	drum4_d->RegistListener(_audioProfile);
 
 	drum5 = Node::create();
-	auto drum5_d = Sprite::create("main/drum5.png");
+	auto drum5_d = DrumSprite::create("main/drum5.png");
+	drum5_d->setSelSprite("main/drum5_sel.png");
+	drum5_d->setMusicFile(*XMLParseUtil::_musicPath[4]);
 
 	drum5_d->setPosition(0, 0);
 
@@ -375,7 +390,7 @@ void MainGameScene::my_init()
 	drum5->setPosition(1420, 1080 - 865 );
 	addChild(drum5, 12);
 
-
+	drum5_d->RegistListener(_audioProfile);
 	//zhijia
 	zhijia = Sprite::create("main/zhijia.png");
 	zhijia->setPosition(990, 265);
@@ -444,7 +459,7 @@ void MainGameScene::my_init()
 
 	//drum panel
 	drum_panel = Sprite::create("main/drum_panel.png");
-	drum_panel->setPosition(185, 1080 - 220);
+	drum_panel->setPosition(1920 * 0.1, 1080 - 220);
 	//drum_panel->setOpacity(0);
 	addChild(drum_panel, 45);
 

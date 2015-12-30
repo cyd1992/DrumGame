@@ -10,11 +10,15 @@ using namespace cocos2d::experimental;
 DrumSprite::DrumSprite()
 {
 	_musicFile = new std::string(100, 0);
+	_selSprite = new std::string(100, 0);
+	_sprite =  new std::string(100, 0);
 }
 
 DrumSprite::~DrumSprite()
 {
 	delete _musicFile;
+	delete _selSprite;
+	delete _sprite;
 }
 
 DrumSprite* DrumSprite::create(const std::string& filename)
@@ -23,6 +27,7 @@ DrumSprite* DrumSprite::create(const std::string& filename)
 	if (sprite && sprite->initWithFile(filename))
 	{
 		sprite->autorelease();
+		sprite->_sprite->assign(filename);
 		//sprite->_id = 7;
 		//sprite->musicFile = new std::string("music/t1.mp3");
 		//log("%d", sprite->_id);///////////////////////////////////////////////
@@ -41,6 +46,14 @@ void DrumSprite::setMusicFile(const std::string& musicFile)
 
 }
 
+
+
+void DrumSprite::setSelSprite(const std::string& selFile)
+{
+	_selSprite->assign(selFile);
+}
+
+
 void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfile)
 {
 	// Make sprite1 touchable
@@ -58,7 +71,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 		if (rect.containsPoint(locationInNode))
 		{
-			this->setTexture("main/drum4_sel.png");
+			this->setTexture(_selSprite->c_str());
 			//this->setSpriteFrame(SpriteFrame::create("main/drum4_sel.png", Rect(0, 0, 457, 282)));
 			//auto temp =  static_cast<AudioTestScene*>(target->getParent());
 
@@ -83,7 +96,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 			auto note = scene->getChildByTag(scene->_curTag);
 			if (note != nullptr) {
 
-				float dist = note->getPositionX() - visibleSize.width * 0.15;
+				float dist = note->getPositionX() - visibleSize.width * 0.1;
 
 				ScoreUtil::SetScore(dist, scene);
 
@@ -99,7 +112,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 	listener1->onTouchEnded = [&](Touch* touch, Event* event) {
 		auto target = static_cast<Sprite*>(event->getCurrentTarget());
 
-		this->setTexture("main/drum4.png");
+		this->setTexture(_sprite->c_str());
 		//this->setSpriteFrame(SpriteFrame::create("main/drum4.png", Rect(0, 0, 417, 242)));
 
 
