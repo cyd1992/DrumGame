@@ -14,6 +14,7 @@ public:
 	virtual ~DrumSprite();
 
 	int _id = 6;
+	int _order;
 
 	static DrumSprite* create(const std::string& filename);
 

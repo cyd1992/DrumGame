@@ -44,7 +44,7 @@ void DJScheduler::callback1(float dt)
 			//Layer* panel = (Layer*)(this->getParent());
 
 			//note test
-			auto noteSprite = NoteNode::create(_id);
+			auto noteSprite = NoteNode::create(_note._type,_id);
 
 // 			if(_note._index == 0) noteSprite->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
 // 			else if(_note._index == 1) noteSprite->setPosition(visibleSize.width *0.3, visibleSize.height *1.2);
@@ -110,18 +110,19 @@ void DJScheduler::callback2(float dt)
 			//Layer* panel = (Layer*)(this->getParent());
 
 			//note test
-			auto noteSprite = NoteNode::create(_id);
+			auto noteSprite = NoteNode::create(_note._type,_id);
+			noteSprite->_type = _note._type;
 
 			// 			if(_note._index == 0) noteSprite->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
 			// 			else if(_note._index == 1) noteSprite->setPosition(visibleSize.width *0.3, visibleSize.height *1.2);
 
 			noteSprite->setPosition(visibleSize.width *1.15, 860);
-			noteSprite->setScale(2);
-			noteSprite->setScaleX(0.7);
+// 			noteSprite->setScale(2);
+// 			noteSprite->setScaleX(0.7);
 			if (_note._type == 1)
 			{
-				noteSprite->setScale(1);
-				noteSprite->setScaleX(0.7);
+				noteSprite->setScale(0.8);
+
 			}
 
 			//noteSprite->setOpacity(100);

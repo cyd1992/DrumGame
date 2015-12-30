@@ -38,11 +38,16 @@ bool JiesuanScene::init()
 
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width / 2,
 		origin.y + closeItem->getContentSize().height / 2));
-
+	closeItem->setScale(2);
 	// create menu, it's an autorelease object
 	auto menuBack = Menu::create(closeItem, NULL);
 	menuBack->setPosition(Vec2::ZERO);
 	this->addChild(menuBack, 100);
+
+	auto back = Sprite::create("jiesuan/jiesuan.png");
+	back->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	addChild(back, 0);
+
 
 	
 

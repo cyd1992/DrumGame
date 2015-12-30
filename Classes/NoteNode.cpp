@@ -3,10 +3,10 @@
 
 USING_NS_CC;
 
-NoteNode* NoteNode::create(int note_tag)
+NoteNode* NoteNode::create(int type ,int note_tag)
 {
 	NoteNode *node = new (std::nothrow) NoteNode();
-	if (node && node->init(note_tag))
+	if (node && node->init(type,note_tag))
 	{
 		node->autorelease();
 		return node;
@@ -15,7 +15,7 @@ NoteNode* NoteNode::create(int note_tag)
 	return nullptr;
 }
 
-bool NoteNode::init(int note_tag)
+bool NoteNode::init(int type,int note_tag)
 {
 	// 1. super init first
 	if (!Node::init())
@@ -23,7 +23,20 @@ bool NoteNode::init(int note_tag)
 		return false;
 	}
 
-	auto sprite = Sprite::create("note.png");
+	std::string file;
+	switch (type)
+	{
+	case 1: file = "main/drum_panel1.png"; break;
+	case 2: file = "main/drum_panel1.png"; break;
+	case 3: file = "main/drum_panel3.png"; break;
+	case 4: file = "main/drum_panel4.png"; break;
+	case 5: file = "main/drum_panel5.png"; break;
+	case 6: file = "main/drum_panel1.png"; break;
+	default:
+		break;
+	}
+
+	auto sprite = Sprite::create(file);
 	addChild(sprite);
 
 	char t[100];
@@ -45,7 +58,7 @@ void NoteNode::StartDrop()
 	// 	auto move1 = MoveBy::create(1.5, Vec2(0, -1 * visibleSize.height));
 	// 	auto move2 = MoveBy::create(0.5, Vec2(0, -1 * visibleSize.height / 3));
 
-	auto move1 = MoveBy::create(2.7, Vec2(-1 * visibleSize.width, 0));
+	auto move1 = MoveBy::create(2.7 * 0.7, Vec2(-1 * visibleSize.width, 0));
 	auto callfunc1 = CallFunc::create([this]() {
 		//log("remove!");
 		//this->removeFromParentAndCleanup(true);
@@ -57,7 +70,7 @@ void NoteNode::StartDrop()
 		//if auto   play music
 
 	});
-	auto move2 = MoveBy::create(0.3, Vec2(-1 * visibleSize.width * 0.1, 0));
+	auto move2 = MoveBy::create(0.3 * 0.7, Vec2(-1 * visibleSize.width * 0.1, 0));
 
 	auto callfunc2 = CallFunc::create([this]() {
 		//log("remove!");
@@ -68,7 +81,7 @@ void NoteNode::StartDrop()
 
 	});
 
-	auto move3 = MoveBy::create(0.3, Vec2(-1 * visibleSize.width *0.1, 0));
+	auto move3 = MoveBy::create(0.3 * 0.7, Vec2(-1 * visibleSize.width *0.1, 0));
 
 	auto callfunc3 = CallFunc::create([this]() {
 		//log("remove!");
@@ -113,7 +126,7 @@ void NoteNode::StartDrop()
 		this->removeFromParentAndCleanup(true);
 	});
 
-	auto seq = Sequence::create(move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
+	auto seq = Sequence::create(DelayTime::create(3*0.3),move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
 
 	this->runAction(seq);
 

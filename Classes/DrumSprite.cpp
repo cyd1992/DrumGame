@@ -4,6 +4,8 @@
 
 #include "ScoreUtil.h"
 
+#include "NoteNode.h"
+
 USING_NS_CC;
 using namespace cocos2d::experimental;
 
@@ -72,6 +74,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 		if (rect.containsPoint(locationInNode))
 		{
 			this->setTexture(_selSprite->c_str());
+			this->getParent()->setZOrder(60);
 			//this->setSpriteFrame(SpriteFrame::create("main/drum4_sel.png", Rect(0, 0, 457, 282)));
 			//auto temp =  static_cast<AudioTestScene*>(target->getParent());
 
@@ -93,12 +96,15 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 			Size visibleSize = Director::getInstance()->getVisibleSize();
 			//score 
 			auto scene = (MainGameScene*)(this->getParent()->getParent());
-			auto note = scene->getChildByTag(scene->_curTag);
+			auto note = (NoteNode*)scene->getChildByTag(scene->_curTag);
 			if (note != nullptr) {
 
 				float dist = note->getPositionX() - visibleSize.width * 0.1;
-
-				ScoreUtil::SetScore(dist, scene);
+				if (this->getParent()->getTag() == note->_type)
+				{
+					ScoreUtil::SetScore(dist, scene);
+				}
+				
 
 			}
 			
@@ -113,6 +119,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 		auto target = static_cast<Sprite*>(event->getCurrentTarget());
 
 		this->setTexture(_sprite->c_str());
+		this->getParent()->setZOrder(this->_order);
 		//this->setSpriteFrame(SpriteFrame::create("main/drum4.png", Rect(0, 0, 417, 242)));
 
 

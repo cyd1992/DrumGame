@@ -11,11 +11,11 @@ public:
 	int _auto = 0;
 	int _type;
 
-	boolean isKilled = false;
+	bool isKilled = false;
 
-	static NoteNode* create(int note_tag);
+	static NoteNode* create(int type, int note_tag);
 
-	virtual bool init(int note_tag);
+	virtual bool init(int type,int note_tag);
 
 	void StartDrop();
 };

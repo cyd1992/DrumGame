@@ -15,6 +15,8 @@
 
 #include "ToastSprite.h"
 
+#include "JiesuanScene.h"
+
 USING_NS_CC;
 
 Scene* MenuScene::createScene()
@@ -71,7 +73,7 @@ bool MenuScene::init()
 	//add a menu
 	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
 	auto item1 = MenuItemFont::create("DrumGameScene", CC_CALLBACK_1(MenuScene::menuCallbackMain, this));
-	auto item2 = MenuItemFont::create("Band Mode", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
+	auto item2 = MenuItemFont::create("Jiesuan", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
 	auto item3 = MenuItemFont::create("WelcomeScene", CC_CALLBACK_1(MenuScene::menuCallbackAudio, this));
 	auto item4 = MenuItemFont::create("Practice Mode", CC_CALLBACK_1(MenuScene::menuCallbackPractice, this));
 
@@ -80,7 +82,7 @@ bool MenuScene::init()
 	item3->setScale(2);
 	item4->setScale(2);
 
-	auto menu = Menu::create(item1, item2, item3, item4, nullptr);
+	auto menu = Menu::create(item1,item2,item4, nullptr);
 	menu->alignItemsVertically();
 	
 
@@ -88,9 +90,9 @@ bool MenuScene::init()
 	menu->setPosition(Vec2(s.width / 2, s.height / 2));
 
 // note node test
-	auto note = NoteNode::create(10);
-	note->setPosition(visibleSize.width * 0, visibleSize.height*0.2);
-	addChild(note);
+// 	auto note = NoteNode::create(10);
+// 	note->setPosition(visibleSize.width * 0, visibleSize.height*0.2);
+// 	addChild(note);
 
 //draw test
 // 	auto draw = DrawNode::create();
@@ -125,7 +127,7 @@ void MenuScene::menuCallbackAudio(Ref* sender)
 
 void MenuScene::menuCallbackDisk(Ref* sender)
 {
-	Director::getInstance()->replaceScene(BandSelectScene::createScene());
+	Director::getInstance()->replaceScene(JiesuanScene::createScene());
 }
 
 

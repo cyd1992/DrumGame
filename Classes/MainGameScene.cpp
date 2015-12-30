@@ -255,6 +255,18 @@ void MainGameScene::my_init()
 	// background layer
 	//auto back = LayerColor::create(Color4B(20, 30, 52, 255));
 
+	// add a "close" icon to exit the progress. it's an autorelease object
+	auto closeItem = MenuItemFont::create("Back", CC_CALLBACK_1(MainGameScene::menuCallbackBack, this));
+
+	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width / 2,
+		origin.y + closeItem->getContentSize().height / 2));
+	closeItem->setScale(2);
+	// create menu, it's an autorelease object
+	auto menu = Menu::create(closeItem, NULL);
+	menu->setPosition(Vec2::ZERO);
+	this->addChild(menu, 100);
+
+
 	auto back = Sprite::create("main/back.png");
 	back->setPosition(visibleSize.width / 2, visibleSize.height / 2);
 
@@ -283,6 +295,7 @@ void MainGameScene::my_init()
 
 	drum1 = Node::create();
 	auto drum1_d = DrumSprite::create("main/drum1.png");
+	drum1_d->_order = 9;
 	drum1_d->setSelSprite("main/drum1_sel.png");
 	drum1_d->setMusicFile(*XMLParseUtil::_musicPath[0]);
 	drum1_d->setPosition(0, 0);
@@ -294,7 +307,7 @@ void MainGameScene::my_init()
 	drum1->addChild(drum1_t, 10);
 
 	drum1->setPosition(475, 1080 - 840);
-
+	drum1->setTag(1);
 	addChild(drum1, 9);
 
 	drum1_d->RegistListener(_audioProfile);
@@ -302,6 +315,7 @@ void MainGameScene::my_init()
 	//
 	drum3 = Node::create();
 	auto drum3_d = DrumSprite::create("main/drum3.png");
+	drum3_d->_order = 10;
 	drum3_d->setSelSprite("main/drum3_sel.png");
 	drum3_d->setMusicFile(*XMLParseUtil::_musicPath[2]);
 	drum3_d->setPosition(0, 0);
@@ -313,13 +327,14 @@ void MainGameScene::my_init()
 	drum3->addChild(drum3_t, 10);
 
 	drum3->setPosition(335, 1080 - 635 );
-	
+	drum3->setTag(3);
 	addChild(drum3, 10);
 
 	drum3_d->RegistListener(_audioProfile);
 
 	drum2 = Node::create();
 	auto drum2_d = DrumSprite::create("main/drum2.png");
+	drum2_d->_order = 11;
 	drum2_d->setSelSprite("main/drum2_sel.png");
 	drum2_d->setMusicFile(*XMLParseUtil::_musicPath[1]);
 	drum2_d->setPosition(0, 0);
@@ -331,13 +346,14 @@ void MainGameScene::my_init()
 	drum2->addChild(drum2_t, 10);
 
 	drum2->setPosition(730, 1080 - 640 );
-
+	drum2->setTag(2);
 	addChild(drum2, 11);
-
+	
 	drum2_d->RegistListener(_audioProfile);
 
 	drum6 = Node::create();
 	auto drum6_d = DrumSprite::create("main/drum6.png");
+	drum6_d->_order = 11;
 	drum6_d->setSelSprite("main/drum6_sel.png");
 	drum6_d->setMusicFile(*XMLParseUtil::_musicPath[5]);
 
@@ -350,12 +366,14 @@ void MainGameScene::my_init()
 	drum6->addChild(drum6_t, 10);
 
 	drum6->setPosition(1130, 1080 - 640 );
+	drum6->setTag(6);
 	addChild(drum6, 11);
 
 	drum6_d->RegistListener(_audioProfile);
 
 	drum4 = Node::create();
 	auto drum4_d = DrumSprite::create("main/drum4.png");
+	drum4_d->_order = 10;
 	drum4_d->setSelSprite("main/drum4_sel.png");
 	drum4_d->setMusicFile(*XMLParseUtil::_musicPath[3]);
 
@@ -369,13 +387,14 @@ void MainGameScene::my_init()
 	drum4->addChild(drum4_t, 10);
 
 	drum4->setPosition(930, 1080 - 950);
-
+	drum4->setTag(4);
 	addChild(drum4, 10);
 
 	drum4_d->RegistListener(_audioProfile);
 
 	drum5 = Node::create();
 	auto drum5_d = DrumSprite::create("main/drum5.png");
+	drum5_d->_order = 12;
 	drum5_d->setSelSprite("main/drum5_sel.png");
 	drum5_d->setMusicFile(*XMLParseUtil::_musicPath[4]);
 
@@ -388,6 +407,7 @@ void MainGameScene::my_init()
 	drum5->addChild(drum5_t, 10);
 
 	drum5->setPosition(1420, 1080 - 865 );
+	drum5->setTag(5);
 	addChild(drum5, 12);
 
 	drum5_d->RegistListener(_audioProfile);
