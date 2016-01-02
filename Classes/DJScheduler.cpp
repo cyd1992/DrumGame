@@ -9,6 +9,7 @@
 #include "MainGameScene.h"
 
 #include "JiesuanScene.h"
+#include "ScoreUtil.h"
 USING_NS_CC;
 using namespace cocos2d::experimental;
 //float DJScheduler::_time = -3.0f;
@@ -142,6 +143,8 @@ void DJScheduler::callback2(float dt)
 	else
 	{
 		log("end!");
+		
+		ScoreUtil::_score = ((MainGameScene*)this->getParent())->_score;
 		AudioEngine::stop(((MainGameScene*)this->getParent())->_backId);
 		Director::getInstance()->replaceScene(JiesuanScene::createScene());
 	}

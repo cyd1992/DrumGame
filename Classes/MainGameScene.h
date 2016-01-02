@@ -39,6 +39,11 @@ public:
 private:
 	void my_init_old();
 	void my_init();
+	void drum_test();
+
+	cocos2d::EventListenerTouchOneByOne* getListener(std::string file);
+
+
 	cocos2d::Node* drum1, *drum2, *drum3, *drum4, *drum5, *drum6 ;
 	cocos2d::Sprite* drum_t1, *drum_t2;
 	cocos2d::Sprite* zhijia;

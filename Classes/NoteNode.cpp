@@ -1,5 +1,6 @@
 #include "NoteNode.h"
 #include "MainGameScene.h"
+#include "ScoreUtil.h"
 
 USING_NS_CC;
 
@@ -46,7 +47,7 @@ bool NoteNode::init(int type,int note_tag)
 	tagLabel->setFontName("Marker Felt");
 	tagLabel->setFontSize(48);
 	tagLabel->setString(t);
-	addChild(tagLabel);
+	//addChild(tagLabel);
 
 	return true;
 }
@@ -92,6 +93,7 @@ void NoteNode::StartDrop()
 
 			auto scene = (MainGameScene*)(this->getParent());
 			scene->_combo = 0;
+			ScoreUtil::_miss++;
 
 			scene->hud_layer->_combo->setString("0");
 			

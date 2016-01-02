@@ -5,6 +5,8 @@
 
 #include "MenuScene.h"
 
+#include "BandSelectScene.h"
+
 USING_NS_CC;
 
 Scene* PracticeSelectScene::createScene()
@@ -90,6 +92,7 @@ void PracticeSelectScene::menuCallbackLevel1(cocos2d::Ref* sender)
 	XMLParseUtil::ParseLevel("level/level1/level1.xml");
 
 	Director::getInstance()->replaceScene(MainGameScene::createScene());
+	//Director::getInstance()->replaceScene(BandSelectScene::createScene());
 }
 
 void PracticeSelectScene::menuCallbackLevel2(cocos2d::Ref* sender)

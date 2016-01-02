@@ -17,6 +17,8 @@
 
 #include "JiesuanScene.h"
 
+#include "ModeSelectScene.h"
+
 USING_NS_CC;
 
 Scene* MenuScene::createScene()
@@ -74,7 +76,7 @@ bool MenuScene::init()
 	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
 	auto item1 = MenuItemFont::create("DrumGameScene", CC_CALLBACK_1(MenuScene::menuCallbackMain, this));
 	auto item2 = MenuItemFont::create("Jiesuan", CC_CALLBACK_1(MenuScene::menuCallbackDisk, this));
-	auto item3 = MenuItemFont::create("WelcomeScene", CC_CALLBACK_1(MenuScene::menuCallbackAudio, this));
+	auto item3 = MenuItemFont::create("Mode", CC_CALLBACK_1(MenuScene::menuCallbackAudio, this));
 	auto item4 = MenuItemFont::create("Practice Mode", CC_CALLBACK_1(MenuScene::menuCallbackPractice, this));
 
 	item1->setScale(2);
@@ -82,7 +84,7 @@ bool MenuScene::init()
 	item3->setScale(2);
 	item4->setScale(2);
 
-	auto menu = Menu::create(item1,item2,item4, nullptr);
+	auto menu = Menu::create(item1,item2,item3,item4, nullptr);
 	menu->alignItemsVertically();
 	
 
@@ -122,7 +124,7 @@ void MenuScene::menuCallback(Ref* sender)
 
 void MenuScene::menuCallbackAudio(Ref* sender)
 {
-	Director::getInstance()->replaceScene(WelcomeScene::createScene());
+	Director::getInstance()->replaceScene(ModeSelectScene::createScene());
 }
 
 void MenuScene::menuCallbackDisk(Ref* sender)

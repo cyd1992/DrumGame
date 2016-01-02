@@ -4,6 +4,12 @@
 
 USING_NS_CC;
 
+int ScoreUtil::_score = 0;
+int ScoreUtil::_perfect = 0;
+int ScoreUtil::_great = 0;
+int ScoreUtil::_miss = 0;
+int ScoreUtil::_maxCombo = 0;
+
 void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -16,6 +22,7 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 		//scene->_curTag++;
 		int type = 2;
 		scene->_combo++;
+		if (_maxCombo < scene->_combo) _maxCombo = scene->_combo;
 
 		int score_temp = 10;
 
@@ -23,11 +30,13 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 		{
 			score_temp = 100;
 			type = 0;
+			_perfect++;
 		}
 		else if(dist < 70)
 		{
 			score_temp = 50;
 			type = 1;
+			_great++;
 		}
 
 		float combo_factor = 1;
@@ -89,8 +98,18 @@ void ScoreUtil::SetScore(float dist, MainGameScene* scene)
 	else
 	{
 		scene->_combo = 0;
+		_miss++;
 	}
 
+}
+
+void ScoreUtil::Clear()
+{
+	_score = 0;
+	_perfect = 0;
+	_great = 0;
+	_miss = 0;
+	_maxCombo = 0;
 }
 
 void ScoreUtil::SetPerform(MainGameScene* scene, std::string s, Color3B c)

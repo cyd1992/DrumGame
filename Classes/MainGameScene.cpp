@@ -12,6 +12,8 @@
 
 #include "HUD.h"
 
+#include "ScoreUtil.h"
+
 
 USING_NS_CC;
 using namespace cocos2d::experimental;
@@ -43,7 +45,7 @@ bool MainGameScene::init()
 
 	//my_init_old();
 	my_init();
-	
+	//drum_test();
 
 	return true;
 }
@@ -178,18 +180,14 @@ void MainGameScene::my_init_old()
 
 	sche->StartTimer();
 
-	AudioEngine::preload(*XMLParseUtil::_bgmPath, [](bool isSuccess) {
-		if (isSuccess)
-		{
-			//stateLabel->setString("status:load success");
-			//log("load music/beat1.mp3  succeed!");
-		}
-		else
-		{
-			//stateLabel->setString("status:load fail");
-			//log("load music/beat1.mp3  failed!");
-		}
-	});
+	AudioEngine::preload(*XMLParseUtil::_bgmPath, [](bool isSuccess) {});
+
+	AudioEngine::preload(*XMLParseUtil::_musicPath[0], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[1], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[2], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[3], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[4], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[5], [](bool isSuccess) {});
 
 	//_backId = AudioEngine::play2d(* XMLParseUtil::_bgmPath, false, 0.3f, &_audioProfile);
 	//log("backid: %d", _backId);
@@ -198,8 +196,6 @@ void MainGameScene::my_init_old()
 	// 	note->setPosition(visibleSize.width *0.17, visibleSize.height *1.2);
 	// 	panel->addChild(note);
 	// 	note->StartDrop();
-
-
 
 	// score label
 	char stringLabel[100];
@@ -252,6 +248,22 @@ void MainGameScene::my_init()
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
+	//clear score
+	ScoreUtil::Clear();
+
+	//audio profile
+	_audioProfile.name = "DrumPanel";
+	_audioProfile.maxInstances = 10;
+	_audioProfile.minDelay = 0.01;
+
+	AudioEngine::preload(*XMLParseUtil::_bgmPath, [](bool isSuccess) {});
+
+	AudioEngine::preload(*XMLParseUtil::_musicPath[0], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[1], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[2], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[3], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[4], [](bool isSuccess) {});
+	AudioEngine::preload(*XMLParseUtil::_musicPath[5], [](bool isSuccess) {});
 	// background layer
 	//auto back = LayerColor::create(Color4B(20, 30, 52, 255));
 
@@ -428,7 +440,6 @@ void MainGameScene::my_init()
 
 	
 
-
 	//hud
 	auto hud_t = Sprite::create("main/hud.png");
 	hud_t->setPosition(visibleSize.width / 2, visibleSize.height / 2);
@@ -524,26 +535,100 @@ void MainGameScene::my_init()
 
 	sche->StartTimer();
 
-	//audio profile
-	_audioProfile.name = "DrumPanel";
-	_audioProfile.maxInstances = 10;
-	_audioProfile.minDelay = 0.05;
-
-	AudioEngine::preload(*XMLParseUtil::_bgmPath, [](bool isSuccess) {
-		if (isSuccess)
-		{
-			//stateLabel->setString("status:load success");
-			//log("load music/beat1.mp3  succeed!");
-		}
-		else
-		{
-			//stateLabel->setString("status:load fail");
-			//log("load music/beat1.mp3  failed!");
-		}
-	});
 }
 
 MainGameScene::~MainGameScene()
 {
-	move->release();
+	//move->release();
 }
+
+void MainGameScene::drum_test()
+{
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	//audio profile
+	_audioProfile.name = "DrumPanel";
+	_audioProfile.maxInstances = 10;
+	_audioProfile.minDelay = 0.01;
+
+
+	AudioEngine::preload("music/beat1.mp3", [](bool isSuccess) {});
+	AudioEngine::preload("music/beat2.mp3", [](bool isSuccess) {});
+	AudioEngine::preload("music/beat3.mp3", [](bool isSuccess) {});
+	AudioEngine::preload("music/beat4.wav", [](bool isSuccess) {});
+	AudioEngine::preload("music/beat5.mp3", [](bool isSuccess) {});
+	AudioEngine::preload("music/beat6.mp3", [](bool isSuccess) {});
+
+	//  test sprite
+	auto note1 = Sprite::create("note.png");
+	note1->setPosition(visibleSize.width / 3, 540);
+	note1->setScale(2);
+	addChild(note1, 1);
+
+	auto note2 = Sprite::create("note.png");
+	note2->setPosition(visibleSize.width / 2, 540);
+	note2->setScale(2);
+	addChild(note2, 1);
+
+	auto note3 = Sprite::create("note.png");
+	note3->setPosition(visibleSize.width / 3 * 2, 540);
+	note3->setScale(2);
+	addChild(note3, 1);
+
+	auto listener1 = getListener("music/beat1.mp3");
+	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, note1);
+
+	auto listener2 = getListener("music/beat4.wav");
+	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener2, note2);
+
+	auto listener3 = getListener("music/beat5.mp3");
+	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener3, note3);
+}
+
+cocos2d::EventListenerTouchOneByOne* MainGameScene::getListener(std::string file)
+{
+	auto listener1 = EventListenerTouchOneByOne::create();
+	listener1->setSwallowTouches(true);
+
+	listener1->onTouchBegan = [=](Touch* touch, Event* event) {
+		auto target = static_cast<Sprite*>(event->getCurrentTarget());
+
+		Vec2 locationInNode = target->convertToNodeSpace(touch->getLocation());
+		Size s = target->getContentSize();
+		Rect rect = Rect(0, 0, s.width, s.height);
+
+		//log("touched!");
+
+		if (rect.containsPoint(locationInNode))
+		{
+
+
+			//log("%s",this->_musicFile);
+			//log(musicFile->_string) ;
+			int _id = AudioEngine::play2d(file, false, 1.0f, &_audioProfile);
+
+
+			return true;
+		}
+
+		return false;
+	};
+
+	listener1->onTouchEnded = [&](Touch* touch, Event* event) {
+		auto target = static_cast<Sprite*>(event->getCurrentTarget());
+
+
+		//this->setTexture(_sprite->c_str());
+		//this->getParent()->setZOrder(this->_order);
+		//this->setSpriteFrame(SpriteFrame::create("main/drum4.png", Rect(0, 0, 417, 242)));
+
+	};
+
+	listener1->retain();
+
+	return listener1;
+
+	//this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, this);
+}
+

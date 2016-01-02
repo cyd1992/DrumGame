@@ -1,12 +1,15 @@
 #include "BandSelectScene.h"
 
-#include "MainGameScene.h"
-
 #include "XMLParseUtil.h"
 #include "MenuScene.h"
 #include "MainGameScene.h"
 
 USING_NS_CC;
+
+BandSelectScene::BandSelectScene()
+{
+
+}
 
 Scene* BandSelectScene::createScene()
 {
@@ -33,6 +36,13 @@ bool BandSelectScene::init()
 		return false;
 	}
 
+	my_init();
+
+	return true;
+}
+
+void BandSelectScene::my_init_old()
+{
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -66,14 +76,59 @@ bool BandSelectScene::init()
 	menu->setPosition(Vec2(s.width / 2, s.height / 2));
 
 	//load backgroud
-// 	auto background = Sprite::create("band.png");
-// 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-// 	background->setScale(0.5);
-// 
-// 	addChild(background, 10);
-
-	return true;
+	// 	auto background = Sprite::create("band.png");
+	// 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	// 	background->setScale(0.5);
+	// 
+	// 	addChild(background, 10);
 }
+
+void BandSelectScene::my_init()
+{
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	//load backgroud
+	auto background = Sprite::create("mode/mode.png");
+	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	addChild(background, 0);
+
+	// slider 
+	auto item1 = MenuItemImage::create("band/slider_left.png", "band/slider_left_sel.png", CC_CALLBACK_1(BandSelectScene::CallbackLeft, this));
+	auto item2 = MenuItemImage::create("band/slider_right.png", "band/slider_right_sel.png", CC_CALLBACK_1(BandSelectScene::CallbackRight, this));
+
+	item1->setPosition(120, 540);
+	item2->setPosition(1800, 540);
+
+	auto menu = Menu::create(item1, item2, nullptr);
+	menu->setPosition(Vec2::ZERO);
+	addChild(menu,10);
+
+
+	//item
+	_bandItem[0] = createItem(0);
+	_bandItem[0]->setPosition(960, 540);
+	_bandItem[0]->setTag(0);
+	addChild(_bandItem[0], 10);
+
+	// add a "close" icon to exit the progress. it's an autorelease object
+	auto closeItem = MenuItemFont::create("Back", CC_CALLBACK_1(BandSelectScene::menuCallbackBack, this));
+
+	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width / 2,
+		origin.y + closeItem->getContentSize().height / 2));
+
+	// create menu, it's an autorelease object
+	auto menuBack = Menu::create(closeItem, NULL);
+	menuBack->setPosition(Vec2::ZERO);
+	this->addChild(menuBack, 100);
+	
+	
+
+}
+
+
+
+
 
 void BandSelectScene::menuCallbackBack(Ref* pSender)
 {
@@ -100,3 +155,70 @@ void BandSelectScene::menuCallbackLevel3(cocos2d::Ref* sender)
 
 	Director::getInstance()->replaceScene(MainGameScene::createScene());
 }
+
+void BandSelectScene::CallbackRight(cocos2d::Ref* sender)
+{
+	if (_curIndex < 2)
+	{
+		_bandItem[_curIndex]->runAction( Sequence::create( MoveBy::create(0.5, Vec2(-1920, 0)), 
+										 CallFunc::create([this]() {this->getChildByTag(_curIndex-1)->removeFromParentAndCleanup(true); })
+										 ,nullptr));
+		_curIndex++;
+		_bandItem[_curIndex] = createItem(_curIndex);
+		_bandItem[_curIndex]->setPosition(1920 + 960, 540);
+		_bandItem[_curIndex]->setTag(_curIndex);
+		addChild(_bandItem[_curIndex], 10);
+		_bandItem[_curIndex]->runAction(MoveBy::create(0.5, Vec2(-1920, 0)));
+
+	}
+
+
+}
+
+void BandSelectScene::CallbackLeft(cocos2d::Ref* sender)
+{
+	if (_curIndex > 0)
+	{
+		_bandItem[_curIndex]->runAction(Sequence::create(MoveBy::create(0.5, Vec2(1920, 0)),
+			CallFunc::create([this]() {this->getChildByTag(_curIndex + 1)->removeFromParentAndCleanup(true); })
+			, nullptr));
+
+		_curIndex--;
+		_bandItem[_curIndex] = createItem(_curIndex);
+		_bandItem[_curIndex]->setPosition(-1920 + 960, 540);
+		_bandItem[_curIndex]->setTag(_curIndex);
+		addChild(_bandItem[_curIndex], 10);
+		_bandItem[_curIndex]->runAction(MoveBy::create(0.5, Vec2(1920, 0)));
+
+	}
+}
+
+cocos2d::Node* BandSelectScene::createItem(int index)
+{
+	auto node = Node::create();
+
+	auto menuItem = MenuItemImage::create("band/band_item.png", "band/band_item.png", [this](Ref *sender) {
+		XMLParseUtil::ParseLevel(_musicFile[_curIndex].c_str());
+		Director::getInstance()->replaceScene(MainGameScene::createScene());
+	});
+
+
+	auto menu = Menu::create(menuItem, nullptr);
+	menu->setPosition(Vec2::ZERO);
+	node->addChild(menu, 0);
+
+	auto title = LabelTTF::create();
+	title->setString(_title[index]);
+	if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+		title->setFontName("fonts/MF.ttf");
+	else title->setFontName("goma block");
+	title->setFontSize(70);
+
+	node->addChild(title, 10);
+
+	return node;
+
+}
+
+
+

@@ -73,8 +73,7 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 
 		if (rect.containsPoint(locationInNode))
 		{
-			this->setTexture(_selSprite->c_str());
-			this->getParent()->setZOrder(60);
+			
 			//this->setSpriteFrame(SpriteFrame::create("main/drum4_sel.png", Rect(0, 0, 457, 282)));
 			//auto temp =  static_cast<AudioTestScene*>(target->getParent());
 
@@ -91,7 +90,8 @@ void DrumSprite::RegistListener(cocos2d::experimental::AudioProfile& _audioProfi
 			// 				log("--");
 			// 			}
 			//}
-
+			this->setTexture(_selSprite->c_str());
+			this->getParent()->setZOrder(60);
 
 			Size visibleSize = Director::getInstance()->getVisibleSize();
 			//score 
