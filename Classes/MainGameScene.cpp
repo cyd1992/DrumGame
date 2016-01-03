@@ -14,6 +14,7 @@
 
 #include "ScoreUtil.h"
 
+#include "PauseLayer.h"
 
 USING_NS_CC;
 using namespace cocos2d::experimental;
@@ -53,9 +54,17 @@ bool MainGameScene::init()
 
 void MainGameScene::menuCallbackBack(Ref* pSender)
 {
-	AudioEngine::stop(_backId);
+// 	AudioEngine::stop(_backId);
+// 	Director::getInstance()->replaceScene(MenuScene::createScene());
 
-	Director::getInstance()->replaceScene(MenuScene::createScene());
+//  pause test
+
+	auto pauseLayer = PauseLayer::create();
+	pauseLayer->setPosition(0, 0);
+	
+	addChild(pauseLayer, 200);
+	AudioEngine::pause(_backId);
+	Director::getInstance()->pause();
 }
 
 void MainGameScene::my_init_old()
@@ -276,7 +285,7 @@ void MainGameScene::my_init()
 	// create menu, it's an autorelease object
 	auto menu = Menu::create(closeItem, NULL);
 	menu->setPosition(Vec2::ZERO);
-	this->addChild(menu, 100);
+	//this->addChild(menu, 100);
 
 
 	auto back = Sprite::create("main/back.png");
@@ -527,6 +536,26 @@ void MainGameScene::my_init()
 								delay, callfunc5, delay, callfunc6, delay, callfunc7, delay, callfunc8, 
 		                        DelayTime::create(0.5f), callfunc9, callfunc10, nullptr);
 	//this->runAction(seq);
+
+
+	// back menu
+	//auto backItem = MenuItemImage::create("main/pause.png", "main/pause_sel.png", [this](Ref* sender) {});
+	
+	auto backItem = MenuItemImage::create("main/pause.png", "main/pause_sel.png", CC_CALLBACK_1(MainGameScene::menuCallbackBack, this));
+	backItem->setAnchorPoint(Vec2(1, 0));
+	backItem->setPosition(1900, 20);
+	
+	auto backMenu = Menu::create(backItem, nullptr);
+	backMenu->setPosition(Vec2::ZERO);
+
+	addChild(backMenu, 100);
+
+
+	//  pause test
+// 	auto pauseLayer = PauseLayer::create();
+// 	pauseLayer->setPosition(0, 0);
+// 	
+// 	addChild(pauseLayer, 200);
 
 
 	// scheduler test

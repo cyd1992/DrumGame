@@ -176,6 +176,12 @@ bool JiesuanScene::init()
 	auto menu = Menu::create(item1, item2, nullptr);
 	menu->setPosition(Vec2::ZERO);
 	addChild(menu, 10);
+
+
+	
+
+
+
 	return true;
 }
 
