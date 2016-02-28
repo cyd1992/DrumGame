@@ -13,6 +13,9 @@ public:
 	// implement the "static create()" method manually
 	CREATE_FUNC(PauseLayer);
 
+	static PauseLayer* createPause();
+	
+	bool initPause();
 
 };
 

@@ -1,6 +1,10 @@
 #include "ModeSelectScene.h"
 
 #include "BandSelectScene.h"
+#include "CommonUtil.h"
+
+#include "PracticeGameScene.h"
+#include "XMLParseUtil.h"
 USING_NS_CC;
 
 
@@ -62,10 +66,12 @@ bool ModeSelectScene::init()
 // 	addChild(menu, 9);
 // 	menu->setPosition(Vec2(visibleSize.width / 2, visibleSize.height* 0.22));
 
-	auto item1 = MenuItemImage::create("mode/mode_drum.png", "mode/mode_drum.png", [&](Ref *sender) { Director::getInstance()->replaceScene(BandSelectScene::createScene()); });
-	auto item2 = MenuItemImage::create("mode/mode_drum.png", "mode/mode_drum.png", [&](Ref *sender) { Director::getInstance()->replaceScene(BandSelectScene::createScene()); });
+	auto item1 = MenuItemImage::create("mode/mode_practice.png", "mode/mode_practice_sel.png", [&](Ref *sender) {
+		XMLParseUtil::ParseLevel("practice/practice4/practice4.xml");
+		Director::getInstance()->replaceScene(PracticeGameScene::createScene()); });
+	auto item2 = MenuItemImage::create("mode/mode_drum.png", "mode/mode_drum_sel.png", [&](Ref *sender) { Director::getInstance()->replaceScene(BandSelectScene::createScene()); });
 
-	item1->setPosition(500, 540);
+	item1->setPosition(550, 540);
 	item2->setPosition(1300, 540);
 
 	auto menu = Menu::create(item1, item2, nullptr);
@@ -82,7 +88,33 @@ bool ModeSelectScene::init()
 	addChild(band_label, 10);
 
 
+	// particle test
+	//auto _emitter = CommonUtil::createParticle();
+	//addChild(_emitter, 10);
+
+	//key board test
+	auto listener = EventListenerKeyboard::create();
+	listener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event) {
+		char buf[100] = { 0 };
+		//log("Key %d was pressed!", (int)keyCode);
+
+
+	};
+
+	listener->onKeyReleased = [](EventKeyboard::KeyCode keyCode, Event* event) {
+		char buf[100] = { 0 };
+		//log("Key %d was released!", (int)keyCode);
+		if (keyCode == EventKeyboard::KeyCode::KEY_BACK)
+		{
+			Director::getInstance()->end();
+		}
+		
+	};
+
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
 
 	return true;
+
+
 }

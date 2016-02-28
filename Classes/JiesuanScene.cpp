@@ -47,7 +47,7 @@ bool JiesuanScene::init()
 	// create menu, it's an autorelease object
 	auto menuBack = Menu::create(closeItem, NULL);
 	menuBack->setPosition(Vec2::ZERO);
-	this->addChild(menuBack, 100);
+	//this->addChild(menuBack, 100);
 
 	auto back = Sprite::create("jiesuan/jiesuan.png");
 	back->setPosition(visibleSize.width / 2, visibleSize.height / 2);
@@ -177,6 +177,15 @@ bool JiesuanScene::init()
 	menu->setPosition(Vec2::ZERO);
 	addChild(menu, 10);
 
+	auto pingji = Sprite::create();
+	pingji->setPosition(600, 650);
+
+	if (ScoreUtil::_miss <= 2) pingji->setTexture("jiesuan/s.png");
+	else if (ScoreUtil::_miss > 2 && ScoreUtil::_miss <= 10) pingji->setTexture("jiesuan/a.png");
+	else if (ScoreUtil::_miss > 10 && ScoreUtil::_miss <= 20) pingji->setTexture("jiesuan/b.png");
+	else if (ScoreUtil::_miss > 20 ) pingji->setTexture("jiesuan/c.png");
+
+	addChild(pingji, 30);
 
 	
 

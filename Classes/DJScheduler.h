@@ -12,13 +12,24 @@ public:
 	NoteInfo _note;
 
 	float _time = 0.0f;
+	float t = 2.8f;
 
 	void StartTimer();
+	void StartPracticeTimer();
 
 	void callback1(float dt);
 	void callback2(float dt);
 
+	void callbackPractice(float dt);
 	float abs(float f);
+
+	void createDrops(int type);
+
+	bool isUpdate = true;
+	int _curIndex = 0;
+	int type_table[4] = { 3,1,4,5 };
+
+	bool isOver = false;
 
 };
 

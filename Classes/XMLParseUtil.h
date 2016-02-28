@@ -14,6 +14,7 @@ public:
 
 	//static cocos2d::Vector<NoteInfo> _vec;
 	static float _total;
+	static float _vol;
 	static std::vector<NoteInfo> _vec;
 	static std::string * _musicPath[10];
 	static std::string * _bgmPath;

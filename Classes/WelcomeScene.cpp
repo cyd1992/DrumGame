@@ -44,23 +44,39 @@ bool WelcomeScene::init()
 
 
 	//load backgroud
-	auto background = Sprite::create("welcome.png");
+	auto background = Sprite::create("welcome/welcome.png");
 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	background->setScale(1);
+	background->setScale(1.5);
 
 	addChild(background, 10);
+
+	auto listener1 = EventListenerTouchOneByOne::create();
+	listener1->setSwallowTouches(true);
+	listener1->onTouchBegan = [&](Touch* touch, Event* event) {
+		auto target = static_cast<Sprite*>(event->getCurrentTarget());
+
+		return true;
+	};
+
+	listener1->onTouchEnded = [&](Touch* touch, Event* event) {
+		Director::getInstance()->replaceScene(ModeSelectScene::createScene());
+	};
+
+	listener1->retain();
+
+	this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener1, background);
 
 
 	//add button
 	//add a menu
-	MenuItemFont::setFontName("fonts/Marker Felt.ttf");
-	auto item1 = MenuItemFont::create("START", CC_CALLBACK_1(WelcomeScene::menuCallback, this));
+	auto start = Sprite::create("welcome/start.png");
+	start->setPosition(visibleSize.width / 2, 150);
+	addChild(start, 20);
 
-	auto menu = Menu::create(item1, nullptr);
-	menu->alignItemsVertically();
+	auto title = Sprite::create("welcome/title.png");
+	title->setPosition(visibleSize.width / 2, visibleSize.height / 2);
+	addChild(title, 30);
 
-	addChild(menu, 9);
-	menu->setPosition(Vec2(visibleSize.width / 2, visibleSize.height* 0.22));
 
 	return true;
 }

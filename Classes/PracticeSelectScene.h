@@ -21,6 +21,9 @@ public:
 	void menuCallbackLevel1(cocos2d::Ref* sender);
 	void menuCallbackLevel2(cocos2d::Ref* sender);
 	void menuCallbackLevel3(cocos2d::Ref* sender);
+
+
+
 };
 
 

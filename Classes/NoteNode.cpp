@@ -1,6 +1,8 @@
 #include "NoteNode.h"
 #include "MainGameScene.h"
 #include "ScoreUtil.h"
+#include "PracticeGameScene.h"
+#include "ActionUtil.h"
 
 USING_NS_CC;
 
@@ -28,11 +30,11 @@ bool NoteNode::init(int type,int note_tag)
 	switch (type)
 	{
 	case 1: file = "main/drum_panel1.png"; break;
-	case 2: file = "main/drum_panel1.png"; break;
+	case 2: file = "main/drum_panel6.png"; break;
 	case 3: file = "main/drum_panel3.png"; break;
 	case 4: file = "main/drum_panel4.png"; break;
 	case 5: file = "main/drum_panel5.png"; break;
-	case 6: file = "main/drum_panel1.png"; break;
+	case 6: file = "main/drum_panel6.png"; break;
 	default:
 		break;
 	}
@@ -55,43 +57,53 @@ bool NoteNode::init(int type,int note_tag)
 void NoteNode::StartDrop()
 {
 	Size visibleSize = Director::getInstance()->getVisibleSize();
-
+	float speed = 0.65;
 	// 	auto move1 = MoveBy::create(1.5, Vec2(0, -1 * visibleSize.height));
 	// 	auto move2 = MoveBy::create(0.5, Vec2(0, -1 * visibleSize.height / 3));
 
-	auto move1 = MoveBy::create(2.7 * 0.7, Vec2(-1 * visibleSize.width, 0));
+	auto move1 = MoveBy::create( (2.7  ) * speed, Vec2(-1 * (1920), 0));
 	auto callfunc1 = CallFunc::create([this]() {
 		//log("remove!");
 		//this->removeFromParentAndCleanup(true);
 		auto scene = (MainGameScene*)(this->getParent());
 
-		if(this->getTag() >= scene->_curTag)
-			scene->_curTag = this->getTag();
+		//if(this->getTag() >= scene->_curTag)
+		//	scene->_curTag = this->getTag();
+		auto last = (NoteNode*)(scene->getChildByTag(scene->_curTag));
+		if (last != NULL)
+		{
+			if(last->isKilled || last->isOver) scene->_curTag = this->getTag();
+			//else scene->_curTag2 = this->getTag();
+		}
 
 		//if auto   play music
 
 	});
-	auto move2 = MoveBy::create(0.3 * 0.7, Vec2(-1 * visibleSize.width * 0.1, 0));
+	auto move2 = MoveBy::create( (0.3 - 0.028125*3) * speed, Vec2(-1 * (1920 * 0.1 -60), 0));
 
 	auto callfunc2 = CallFunc::create([this]() {
 		//log("remove!");
 		//this->removeFromParentAndCleanup(true);
 // 		auto scene = (MainGameScene*)(this->getParent());
 // 		scene->_curTag = this->getTag();
-		//if auto   play music
+		//if auto  play music
 
 	});
 
-	auto move3 = MoveBy::create(0.3 * 0.7, Vec2(-1 * visibleSize.width *0.1, 0));
+	auto move3 = MoveBy::create((0.3 + 0.028125*3)* speed, Vec2(-1 * (1920 *0.1 +60), 0));
 
 	auto callfunc3 = CallFunc::create([this]() {
 		//log("remove!");
 		//
+		this->isOver = true;
+		auto scene = (MainGameScene*)(this->getParent());
+
+		scene->_curTag = this->getTag() + 1;
 		if (!this->isKilled)
 		{
 			Size visibleSize = Director::getInstance()->getVisibleSize();
 
-			auto scene = (MainGameScene*)(this->getParent());
+			
 			scene->_combo = 0;
 			ScoreUtil::_miss++;
 
@@ -122,16 +134,65 @@ void NoteNode::StartDrop()
 		}
 	});
 
-	auto move4 = MoveBy::create(1, Vec2(-1 * visibleSize.width / 3, 0));
+	auto move4 = MoveBy::create(1, Vec2(-1 * 1920 / 3, 0));
 	auto callfunc4 = CallFunc::create([this]() {
 		//log("remove!");
 		this->removeFromParentAndCleanup(true);
 	});
 
-	auto seq = Sequence::create(DelayTime::create(3*0.3),move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
+	auto seq = Sequence::create(DelayTime::create(3*(1-speed)),move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
 
 	this->runAction(seq);
 
 
+}
+
+void NoteNode::StartDropPractice()
+{
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+	float speed = 0.65;
+
+	int t = this->getTag() % 10 - 1;
+
+	// 	auto move1 = MoveBy::create(1.5, Vec2(0, -1 * visibleSize.height));
+	// 	auto move2 = MoveBy::create(0.5, Vec2(0, -1 * visibleSize.height / 3));
+
+	auto move1 = MoveBy::create(2.7 * speed + 0.75 * t, Vec2(-1 * (1920 + 1920.0*0.75*t / (3 * speed)), 0));
+	auto callfunc1 = CallFunc::create([this]() {
+		auto scene = (MainGameScene*)(this->getParent());
+		scene->_curTag = this->getTag();
+
+	});
+	auto move2 = MoveBy::create(0.3 * speed, Vec2(-1 * 1920 * 0.1, 0));
+
+	auto callfunc2 = CallFunc::create([this]() {
+
+
+
+	});
+
+	auto move3 = MoveBy::create(0.3 * speed, Vec2(-1 * 1920 *0.1, 0));
+
+	auto callfunc3 = CallFunc::create([this]() {
+		//log("remove!");
+		//
+
+
+		auto scene = (PracticeGameScene*)(this->getParent());
+		scene->_curTag = 0;
+
+		scene->lights->Wrong();
+		ActionUtil::Stay(scene, scene->guide_index);
+	});
+
+	auto move4 = MoveBy::create(1, Vec2(-1 * 1920 / 3, 0));
+	auto callfunc4 = CallFunc::create([this]() {
+		log("remove!");
+		this->removeFromParentAndCleanup(true);
+	});
+
+	auto seq = Sequence::create(DelayTime::create(3 * (1 - speed)), move1, callfunc1, move2, callfunc2, move3, callfunc3, move4, callfunc4, NULL);
+
+	this->runAction(seq);
 }
 

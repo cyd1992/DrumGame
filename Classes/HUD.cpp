@@ -48,7 +48,7 @@ bool HUD::init()
 	// combo const
 	
 	_comboConst->setColor(Color3B(255, 255, 255));
-	_comboConst->setPosition(310, 10);
+	_comboConst->setPosition(410, 10);
 	addChild(_comboConst);
 
 	//combo

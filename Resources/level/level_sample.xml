@@ -17,6 +17,7 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
 -->
 <level>
   <bgm>music/back1.mp3</bgm>
+  
   <track>
     <src id="1">music/beat1.mp3</src>
     <src id="2">music/beat2.mp3</src>

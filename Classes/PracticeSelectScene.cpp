@@ -65,12 +65,7 @@ bool PracticeSelectScene::init()
 	addChild(menu);
 	menu->setPosition(Vec2(s.width / 2, s.height / 2));
 
-	//load backgroud
-	// 	auto background = Sprite::create("band.png");
-	// 	background->setPosition(visibleSize.width / 2, visibleSize.height / 2);
-	// 	background->setScale(0.5);
-	// 
-	// 	addChild(background, 10);
+
 
 	return true;
 }

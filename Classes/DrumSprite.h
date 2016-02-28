@@ -23,6 +23,7 @@ public:
 	void setMusicFile(const std::string& musicFile);
 	void setSelSprite(const std::string& selFile);
 	void RegistListener(cocos2d::experimental::AudioProfile& _audioProfile);
+	void RegistListenerPractice(cocos2d::experimental::AudioProfile& _audioProfile);
 
 	std::string* _sprite;
 	std::string* _musicFile;

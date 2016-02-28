@@ -11,6 +11,7 @@ std::vector<NoteInfo> XMLParseUtil::_vec;
 std::string * XMLParseUtil::_musicPath[10] = { new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string(),new std::string() };
 std::string * XMLParseUtil::_bgmPath = new std::string();
 float XMLParseUtil::_total = 0;
+float XMLParseUtil::_vol = 1.0f;
 
 XMLParseUtil::~XMLParseUtil()
 {
@@ -53,10 +54,13 @@ void XMLParseUtil::ParseLevel(const char* file)
 	delete _bgmPath;
 	_bgmPath = new std::string(bgmElement->GetText());
 
+	//get vol node
+	tinyxml2::XMLElement* volElement = bgmElement->NextSiblingElement();
+	_vol = atof(volElement->GetText());
 	//log("%s", rootElement->GetText());
 
 	//   track
-	tinyxml2::XMLElement* trackElement = bgmElement->NextSiblingElement();
+	tinyxml2::XMLElement* trackElement = volElement->NextSiblingElement();
 
 		tinyxml2::XMLElement* element = trackElement->FirstChildElement();
 		int i = 0;
@@ -96,6 +100,7 @@ void XMLParseUtil::ParseLevel(const char* file)
 	//note
 	noteElement = noteElement->FirstChildElement();
 
+	int id = 0;
 	while (noteElement)
 	{
 		tinyxml2::XMLElement* element = noteElement->FirstChildElement();
@@ -108,28 +113,33 @@ void XMLParseUtil::ParseLevel(const char* file)
 			if (strcmp(element->Value(), "id") == 0)
 			{
 				//log("id = %s", element->GetText());
-				note._id = atoi(element->GetText());
-				log("id = %d", note._id);
+				note._id = id;//atoi(element->GetText());
+				//log("id = %d", id);
 			}
 			else if(strcmp(element->Value(), "time") == 0)
 			{
 				note._time = atof(element->GetText());
-				log("time = %f", note._time);
+				//log("time = %f", note._time);
 			}
 			else if (strcmp(element->Value(), "type") == 0)
 			{
 				note._type = atoi(element->GetText());
-				log("type = %d", note._type);
+				//log("type = %d", note._type);
 			}	
 			else if (strcmp(element->Value(), "auto") == 0)
 			{
 				note._auto = atoi(element->GetText());
-				log("type = %d", note._auto);
+				//log("type = %d", note._auto);
+			}
+			else if (strcmp(element->Value(), "feedback") == 0)
+			{
+				note._feedback = atof(element->GetText());
+				//log("type = %d", note._auto);
 			}
 			element = element->NextSiblingElement();
 		}
 		_vec.push_back(note);
-
+		id++;
 		noteElement = noteElement->NextSiblingElement();
 	}
 

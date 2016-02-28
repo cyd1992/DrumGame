@@ -12,12 +12,14 @@ public:
 	int _type;
 
 	bool isKilled = false;
+	bool isOver = false;
 
 	static NoteNode* create(int type, int note_tag);
 
 	virtual bool init(int type,int note_tag);
 
 	void StartDrop();
+	void StartDropPractice();
 };
 
 

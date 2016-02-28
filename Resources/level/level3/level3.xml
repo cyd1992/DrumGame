@@ -18,16 +18,17 @@ auto: 是否自动演奏，0为手动敲击，1为自动演奏 （如果伴奏�
 
 -->
 <level>
-  <bgm>level/level3/back.mp3</bgm>
+  <bgm>level/level3/level3.mp3</bgm>
+  <vol>0.6</vol>
   <track>
-    <src id="1">level/level3/beat1.mp3</src>
-    <src id="2">level/level3/beat2.mp3</src>
-    <src id="3">level/level3/beat3.mp3</src>
-    <src id="4">level/level3/beat4.mp3</src>
-    <src id="5">level/level3/beat5.mp3</src>
-    <src id="6">level/level3/beat6.mp3</src>
+    <src id="1">music/beat1.mp3</src>
+    <src id="2">music/beat2.mp3</src>
+    <src id="3">music/beat3.mp3</src>
+    <src id="4">music/beat4.mp3</src>
+    <src id="5">music/beat1.mp3</src>
+    <src id="6">music/beat1.mp3</src>
   </track>
-  <total>1</total>
+  <total>58</total>
   <note-list>
     <note>
       <id>0</id>

@@ -1,8 +1,9 @@
-#include "BandSelectScene.h"
+﻿#include "BandSelectScene.h"
 
 #include "XMLParseUtil.h"
 #include "MenuScene.h"
 #include "MainGameScene.h"
+#include "ModeSelectScene.h"
 
 USING_NS_CC;
 
@@ -112,17 +113,37 @@ void BandSelectScene::my_init()
 	addChild(_bandItem[0], 10);
 
 	// add a "close" icon to exit the progress. it's an autorelease object
-	auto closeItem = MenuItemFont::create("Back", CC_CALLBACK_1(BandSelectScene::menuCallbackBack, this));
-
-	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width / 2,
-		origin.y + closeItem->getContentSize().height / 2));
+	auto closeItem = MenuItemFont::create("返回", CC_CALLBACK_1(BandSelectScene::menuCallbackBack, this));
+	closeItem->setFontSize(80);
+	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width / 2 - 20,
+		origin.y + closeItem->getContentSize().height / 2 + 20));
 
 	// create menu, it's an autorelease object
 	auto menuBack = Menu::create(closeItem, NULL);
 	menuBack->setPosition(Vec2::ZERO);
 	this->addChild(menuBack, 100);
+
+
 	
-	
+	auto listener = EventListenerKeyboard::create();
+	listener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event) {
+		char buf[100] = { 0 };
+		//log("Key %d was pressed!", (int)keyCode);
+
+
+	};
+
+	listener->onKeyReleased = [](EventKeyboard::KeyCode keyCode, Event* event) {
+		char buf[100] = { 0 };
+		//log("Key %d was released!", (int)keyCode);
+		if (keyCode == EventKeyboard::KeyCode::KEY_BACK)
+		{
+			Director::getInstance()->replaceScene(ModeSelectScene::createScene());
+		}
+
+	};
+
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
 }
 
@@ -132,7 +153,7 @@ void BandSelectScene::my_init()
 
 void BandSelectScene::menuCallbackBack(Ref* pSender)
 {
-	Director::getInstance()->replaceScene(MenuScene::createScene());
+	Director::getInstance()->replaceScene(ModeSelectScene::createScene());
 }
 
 void BandSelectScene::menuCallbackLevel1(cocos2d::Ref* sender)
@@ -158,7 +179,7 @@ void BandSelectScene::menuCallbackLevel3(cocos2d::Ref* sender)
 
 void BandSelectScene::CallbackRight(cocos2d::Ref* sender)
 {
-	if (_curIndex < 2)
+	if (_curIndex < _maxItem -1)
 	{
 		_bandItem[_curIndex]->runAction( Sequence::create( MoveBy::create(0.5, Vec2(-1920, 0)), 
 										 CallFunc::create([this]() {this->getChildByTag(_curIndex-1)->removeFromParentAndCleanup(true); })
@@ -197,7 +218,7 @@ cocos2d::Node* BandSelectScene::createItem(int index)
 {
 	auto node = Node::create();
 
-	auto menuItem = MenuItemImage::create("band/band_item.png", "band/band_item.png", [this](Ref *sender) {
+	auto menuItem = MenuItemImage::create(_thumbFile[index], _thumbFile[index], [this](Ref *sender) {
 		XMLParseUtil::ParseLevel(_musicFile[_curIndex].c_str());
 		Director::getInstance()->replaceScene(MainGameScene::createScene());
 	});
@@ -214,6 +235,7 @@ cocos2d::Node* BandSelectScene::createItem(int index)
 	else title->setFontName("goma block");
 	title->setFontSize(70);
 
+	title->setPosition(0, -320);
 	node->addChild(title, 10);
 
 	return node;

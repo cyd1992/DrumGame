@@ -26,6 +26,8 @@ public:
 	cocos2d::LabelTTF* _scoreLabel;
 	int _score = 0;
 	int _curTag = 100;
+	int _curTag2 = 100;
+
 	int _combo = 0;
 
 	int _backId;
@@ -36,6 +38,8 @@ public:
 	ToastSprite* _toastSprite;
 	HUD* hud_layer;
 
+	cocos2d::Sprite* guchui;
+	cocos2d::Sprite* drum_panel;
 private:
 	void my_init_old();
 	void my_init();
@@ -51,7 +55,7 @@ private:
 	cocos2d::MoveBy* move;
 	cocos2d::Node* gradient;
 	cocos2d::LayerColor* panelLayer;
-	cocos2d::Sprite* drum_panel;
+	
 	cocos2d::Sprite* light;
 
 

@@ -468,6 +468,7 @@ void MainGameScene::my_init()
 	addChild(hud_layer, 50);
 
 
+
 	//½¥±ä²ã
 	gradient = Node::create();
 	
@@ -503,7 +504,20 @@ void MainGameScene::my_init()
 	//drum_panel->setOpacity(0);
 	addChild(drum_panel, 45);
 
+	//draw test
+	auto draw = DrawNode::create();
+	addChild(draw, 230);
+	// draw a line
+	//draw->drawLine(Vec2(visibleSize.width *0.15 -20, visibleSize.height *0.7), Vec2(visibleSize.width *0.15 -20, visibleSize.height*0.9), Color4F(1.0, 0.0, 0.0, 0.5));
+	//draw->drawLine(Vec2(visibleSize.width *0.1, visibleSize.height *0.7), Vec2(visibleSize.width *0.1, visibleSize.height*0.9), Color4F(1.0, 0.0, 0.0, 0.5));
+	//draw->drawLine(Vec2(visibleSize.width *0.05 +20, visibleSize.height *0.7), Vec2(visibleSize.width *0.05 +20, visibleSize.height*0.9), Color4F(1.0, 0.0, 0.0, 0.5));
 
+	// guchui
+	guchui = Sprite::create("main/guchui.png");
+	guchui->setAnchorPoint(Vec2(1, 1));
+	guchui->setPosition(280, 970);
+	guchui->setRotation(10);
+	addChild(guchui, 100);
 
 	auto delay = DelayTime::create(0.1f);
 	move = MoveBy::create(0.4f, Vec2(0, 1080));
@@ -556,6 +570,28 @@ void MainGameScene::my_init()
 // 	pauseLayer->setPosition(0, 0);
 // 	
 // 	addChild(pauseLayer, 200);
+
+
+	auto listener = EventListenerKeyboard::create();
+	listener->onKeyPressed = [](EventKeyboard::KeyCode keyCode, Event* event) {
+		char buf[100] = { 0 };
+		//log("Key %d was pressed!", (int)keyCode);
+
+
+	};
+
+	listener->onKeyReleased = [this](EventKeyboard::KeyCode keyCode, Event* event) {
+		char buf[100] = { 0 };
+		//log("Key %d was released!", (int)keyCode);
+		if (keyCode == EventKeyboard::KeyCode::KEY_HOME)
+		{
+			//Director::getInstance()->replaceScene(ModeSelectScene::createScene());
+			AudioEngine::stop(_backId);
+		}
+
+	};
+
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
 
 	// scheduler test
